@@ -85,6 +85,15 @@
             >
               {{ props.item.event }}
             </span>
+
+            <!-- Should be where I insert new data for each row -->
+            <!-- Not working? -->
+            <span
+              v-if="col == 'TEMP'"
+            >
+              'hello world' 
+            </span>
+
             <span
               v-if="col == 'environment'"
             >
@@ -264,6 +273,8 @@
             >
               {{ props.item.lastReceiveId | shortId }}
             </span>
+
+
             <span
               v-if="col == 'lastReceiveTime'"
             >
@@ -497,6 +508,7 @@ export default {
       id: { text: i18n.t('AlertId'), value: 'id' },
       resource: { text: i18n.t('Resource'), value: 'resource' },
       event: { text: i18n.t('Event'), value: 'event' },
+      tester: { text: i18n.t('Tester'), value: 'tester' },
       environment: { text: i18n.t('Environment'), value: 'environment' },
       severity: { text: i18n.t('Severity'), value: 'severity' },
       correlate: { text: i18n.t('Correlate'), value: 'correlate' },
@@ -504,6 +516,8 @@ export default {
       service: { text: i18n.t('Service'), value: 'service' },
       group: { text: i18n.t('Group'), value: 'group' },
       value: { text: i18n.t('Value'), value: 'value', class: 'value-header' },
+      //CHANGE TABLE HEADERS -> want to add the new column here
+      TEMP: { text: i18n.t('TEMP'), value:'severity', class: 'value-header' },
       text: { text: i18n.t('Description'), value: 'text', class: 'text-header' },
       tags: { text: i18n.t('Tags'), value: 'tags' },
       attributes: { text: i18n.t('Attribute'), value: 'attributes' },
@@ -576,9 +590,9 @@ export default {
       return this.$config.actions
     },
     customHeaders() {
+      debugger;
       return this.$config.columns.map(c =>
-        this.headersMap[c] || { text: this.$options.filters.capitalize(c), value: 'attributes.' + c }
-      )
+        this.headersMap[c] || { text: this.$options.filters.capitalize(c), value: 'attributes.' + c } )
     },
     selectedItem() {
       return this.alerts.filter(a => a.id == this.selectedId)[0]
