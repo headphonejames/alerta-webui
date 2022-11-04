@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/require-v-for-key -->
 <template>
   <div>
     <v-data-table
@@ -86,13 +87,19 @@
               {{ props.item.event }}
             </span>
 
-            <!-- Should be where I insert new data for each row -->
-            <!-- Not working? -->
+            <!-- Successfully adding new data to a column
+            -->
             <span
-              v-if="col == 'TEMP'"
+              v-if="col == 'tester'"
             >
-              'hello world' 
+              <div v-for="item in dict">
+                <div v-if="props.item.event == item.key">
+                  {{ item.response }}
+                </div>
+              </div>
             </span>
+
+            
 
             <span
               v-if="col == 'environment'"
@@ -492,6 +499,9 @@ import DateTime from './lib/DateTime'
 import moment from 'moment'
 import i18n from '@/plugins/i18n'
 
+//imported mapping dictionary
+import dictData from '../AdditionalColumn/mappings.json'
+
 export default {
   components: {
     DateTime
@@ -504,11 +514,12 @@ export default {
   },
   data: vm => ({
     search: '',
+    dict: dictData, // new
     headersMap: {
       id: { text: i18n.t('AlertId'), value: 'id' },
       resource: { text: i18n.t('Resource'), value: 'resource' },
       event: { text: i18n.t('Event'), value: 'event' },
-      tester: { text: i18n.t('Tester'), value: 'tester' },
+      tester: { text: i18n.t('Tester'), value: 'tester' }, //added
       environment: { text: i18n.t('Environment'), value: 'environment' },
       severity: { text: i18n.t('Severity'), value: 'severity' },
       correlate: { text: i18n.t('Correlate'), value: 'correlate' },
@@ -516,8 +527,6 @@ export default {
       service: { text: i18n.t('Service'), value: 'service' },
       group: { text: i18n.t('Group'), value: 'group' },
       value: { text: i18n.t('Value'), value: 'value', class: 'value-header' },
-      //CHANGE TABLE HEADERS -> want to add the new column here
-      TEMP: { text: i18n.t('TEMP'), value:'severity', class: 'value-header' },
       text: { text: i18n.t('Description'), value: 'text', class: 'text-header' },
       tags: { text: i18n.t('Tags'), value: 'tags' },
       attributes: { text: i18n.t('Attribute'), value: 'attributes' },
@@ -540,9 +549,12 @@ export default {
     details: false,
     selectedId: null,
     multiselect: false,
-    timer: null
+    timer: null,
   }),
   computed: {
+    dictionaryMap() {
+      return this.myJson.map(items => items)
+    },
     displayDensity() {
       return (
         this.$store.getters.getPreference('displayDensity') ||
@@ -711,7 +723,7 @@ export default {
       textarea.select()
       document.execCommand('copy')
       document.body.removeChild(textarea)
-    }
+    },
   }
 }
 </script>

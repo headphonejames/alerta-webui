@@ -1,9 +1,23 @@
-{
-    "links":[
-        {"400":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"},
-        {"401": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"},
-        {"403": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"},
-        {"404": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"},
-        {"405": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"}
-    ]
-}
+[
+        {
+            "key":"http400",
+            "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        },
+        {
+            "key":"http401",
+            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
+        },
+        {
+            "key":"http403",
+            "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
+        },
+        {
+            "key":"http404",
+            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+        },
+        {
+            "key":"http405",
+            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
+        }
+
+]
