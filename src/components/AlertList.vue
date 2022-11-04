@@ -514,12 +514,12 @@ export default {
   },
   data: vm => ({
     search: '',
-    dict: dictData, // new
+    dict: dictData, // added
     headersMap: {
       id: { text: i18n.t('AlertId'), value: 'id' },
       resource: { text: i18n.t('Resource'), value: 'resource' },
       event: { text: i18n.t('Event'), value: 'event' },
-      tester: { text: i18n.t('Tester'), value: 'tester' }, //added
+      tester: { text: i18n.t('Link'), value: 'tester' }, //added
       environment: { text: i18n.t('Environment'), value: 'environment' },
       severity: { text: i18n.t('Severity'), value: 'severity' },
       correlate: { text: i18n.t('Correlate'), value: 'correlate' },
@@ -575,7 +575,7 @@ export default {
     columnWidths() {
       return {
         '--value-width': this.valueWidth() + 'px',
-        '--text-width': this.textWidth() + 'px'
+        // '--text-width': this.textWidth() + 'px' // altered to prevent overflow and odd spacing in last column
       }
     },
     isLoading() {
