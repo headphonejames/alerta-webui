@@ -94,11 +94,13 @@
             >
               <div v-for="item in dict">
                 <div v-if="props.item.event == item.key">
-                  {{ item.response }}
+                  <a
+                    :href="item.response"
+                    target="_blank"
+                  >More Info </a> 
                 </div>
               </div>
             </span>
-
             
 
             <span
@@ -519,7 +521,7 @@ export default {
       id: { text: i18n.t('AlertId'), value: 'id' },
       resource: { text: i18n.t('Resource'), value: 'resource' },
       event: { text: i18n.t('Event'), value: 'event' },
-      tester: { text: i18n.t('Link'), value: 'tester' }, //added
+      tester: { text: i18n.t('Info'), value: 'tester' }, //added
       environment: { text: i18n.t('Environment'), value: 'environment' },
       severity: { text: i18n.t('Severity'), value: 'severity' },
       correlate: { text: i18n.t('Correlate'), value: 'correlate' },
@@ -574,7 +576,7 @@ export default {
     },
     columnWidths() {
       return {
-        '--value-width': this.valueWidth() + 'px',
+        // '--value-width': this.valueWidth() + 'px',
         // '--text-width': this.textWidth() + 'px' // altered to prevent overflow and odd spacing in last column
       }
     },
@@ -838,7 +840,7 @@ div.select-box {
 }
 
 div.action-buttons {
-  position: absolute;
+  position: relative;
   opacity: 0;
   right: 0;
   top: 0.5em;
