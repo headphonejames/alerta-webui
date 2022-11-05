@@ -87,10 +87,9 @@
               {{ props.item.event }}
             </span>
 
-            <!-- Successfully adding new data to a column
-            -->
+            <!-- Additional column for operational runbook links -->
             <span
-              v-if="col == 'tester'"
+              v-if="col == 'info'"
             >
               <div v-for="item in dict">
                 <div v-if="props.item.event == item.key">
@@ -516,12 +515,12 @@ export default {
   },
   data: vm => ({
     search: '',
-    dict: dictData, // added
+    dict: dictData, // make the JSON dictionary available
     headersMap: {
       id: { text: i18n.t('AlertId'), value: 'id' },
       resource: { text: i18n.t('Resource'), value: 'resource' },
       event: { text: i18n.t('Event'), value: 'event' },
-      tester: { text: i18n.t('Info'), value: 'tester' }, //added
+      info: { text: i18n.t('Info'), value: 'info' }, // Column to show operational runbook info.
       environment: { text: i18n.t('Environment'), value: 'environment' },
       severity: { text: i18n.t('Severity'), value: 'severity' },
       correlate: { text: i18n.t('Correlate'), value: 'correlate' },

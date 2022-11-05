@@ -36,7 +36,7 @@ class Config {
       })
       .then(config => {
         if ('columns' in config) {
-          config.columns.push('tester')
+          config.columns.push('info')
         }
         return config
       })
