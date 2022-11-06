@@ -91,17 +91,19 @@
             <span
               v-if="col == 'info'"
             >
-              <div v-for="item in dict">
-                <div v-if="props.item.event == item.key">
+              <div
+                v-for="data in dict"
+                :set="attribute = data.targetAttr"
+              >
+                <div v-if="props.item[attribute] == data.key">
                   <a
-                    :href="item.response"
+                    :href="data.response"
                     target="_blank"
                   >More Info </a> 
                 </div>
               </div>
             </span>
             
-
             <span
               v-if="col == 'environment'"
             >
@@ -637,6 +639,9 @@ export default {
     }
   },
   methods: {
+    attributeMatch(item){
+      return this.cars.id === carID ? true : false
+    },
     duration(item) {
       return moment.duration(moment().diff(moment(item.receiveTime)))
     },

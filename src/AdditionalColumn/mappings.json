@@ -1,22 +1,32 @@
 [
         {
             "key":"http400",
+            "regex":null,
+            "targetAttr":"event",
             "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
         },
         {
             "key":"http401",
+            "regex":null,
+            "targetAttr":"event",
             "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
         },
         {
             "key":"http403",
+            "regex":null,
+            "targetAttr":"event",
             "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
         },
         {
             "key":"http404",
+            "regex":null,
+            "targetAttr":"event",
             "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
         },
         {
             "key":"http405",
+            "regex":null,
+            "targetAttr":"event",
             "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
         }
 
