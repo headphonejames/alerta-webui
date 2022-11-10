@@ -70,7 +70,6 @@ export const en = {
   Unshelve: 'Unshelve',
   Close: 'Close',
   Watch: 'Watch',
-  Notes: 'Bulk Notes',
   Unwatch: 'Unwatch',
   AddNote: 'Add note',
   Delete: 'Delete',
