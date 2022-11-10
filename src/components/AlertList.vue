@@ -95,7 +95,8 @@
                 v-for="data in dict"
                 :set="attribute = data.targetAttr"
               >
-                <div v-if="props.item[attribute] == data.key">
+                <!-- call method to check if target column's data passes regex filters -->
+                <div v-if="regexChecker(data.regex, props.item[attribute]) == true">
                   <a
                     :href="data.response"
                     target="_blank"
@@ -555,9 +556,6 @@ export default {
     timer: null,
   }),
   computed: {
-    dictionaryMap() {
-      return this.myJson.map(items => items)
-    },
     displayDensity() {
       return (
         this.$store.getters.getPreference('displayDensity') ||
@@ -639,6 +637,11 @@ export default {
     }
   },
   methods: {
+    // method to check regex expression against table column
+    regexChecker(dictValue, propColumn) { 
+      const filter = new RegExp(dictValue)
+      return filter.test(propColumn) == true
+    },
     attributeMatch(item){
       return this.cars.id === carID ? true : false
     },
