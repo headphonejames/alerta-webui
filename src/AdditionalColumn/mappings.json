@@ -1,28 +1,22 @@
 [
-        {
-            "regex":"400",
-            "targetAttr":"event",
-            "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
-        },
-        {
-            "regex":"401",
-            "targetAttr":"event",
-            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"
-        },
-        {
-            "regex":"403",
-            "targetAttr":"event",
-            "response": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"
-        },
-        {
-            "regex":"404",
-            "targetAttr":"event",
-            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
-        },
-        {
-            "regex":"405",
-            "targetAttr":"event",
-            "response":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405"
-        }
-
+    {
+      "response": "<a href=https://link-to-correct-resource.com>handbook1</a>",
+      "regexFilters": ["http401","development"],
+      "targetAttributes":["event","environment"]
+    },
+    {
+      "response": "<a href=https://link-to-correct-resource.com>handbook2</a>",
+      "regexFilters": ["CPU","Crit","Prod"],
+      "targetAttributes":["event","severity","environment"]
+    },
+    {
+        "response": "<a href=https://link-to-correct-resource.com>warning runbook</a>",
+        "regexFilters": ["Warning"],
+        "targetAttributes":["severity"]
+      },
+    {
+      "response": "<a href=https://link-to-correct-resource.com>handbook3</a>",
+      "regexFilters": ["regex1","regex2", "regex3"],
+      "targetAttributes":["event","severity","environment"]
+    }
 ]

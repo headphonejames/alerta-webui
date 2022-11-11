@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/require-v-for-key -->
 <template>
   <div>
     <v-data-table
@@ -93,15 +92,9 @@
             >
               <div
                 v-for="data in dict"
-                :set="attribute = data.targetAttr"
-              >
-                <!-- call method to check if target column's data passes regex filters -->
-                <div v-if="regexChecker(data.regex, props.item[attribute]) == true">
-                  <a
-                    :href="data.response"
-                    target="_blank"
-                  >More Info </a> 
-                </div>
+                :key="data.response"
+              >                
+                <div v-html="findMatch(data,props)" />
               </div>
             </span>
             
@@ -636,11 +629,23 @@ export default {
       this.pagination = Object.assign({}, this.pagination, {rowsPerPage: val})
     }
   },
-  methods: {
-    // method to check regex expression against table column
-    regexChecker(dictValue, propColumn) { 
-      const filter = new RegExp(dictValue)
-      return filter.test(propColumn) == true
+  methods: {   
+    // method for mapping column data to operational runbooks
+    findMatch(data, props){
+      const arrayLen = (data.targetAttributes).length
+      let count = 0
+
+      for (let i=0; i < arrayLen; i++) {
+        const filter = new RegExp(data.regexFilters[i]) //create RegExp
+        // verify if there is a match for RegExp against target column
+        if (filter.test(props.item[data.targetAttributes[i]]) == true) {
+          count += 1
+        }
+      }
+
+      return count == arrayLen-1 
+        ? data.response // return operational runbook link
+        : null
     },
     attributeMatch(item){
       return this.cars.id === carID ? true : false
