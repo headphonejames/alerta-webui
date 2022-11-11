@@ -27,6 +27,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@alerta/vue-authenticate": "github:alerta/vue-authenticate",
+    "@vue/compiler-dom": "^3.2.45",
     "acorn-dynamic-import": "^4.0.0",
     "axios": "^0.21.2",
     "export-to-csv": "^0.2.1",
