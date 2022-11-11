@@ -596,7 +596,6 @@ export default {
       return this.$config.actions
     },
     customHeaders() {
-      debugger;
       return this.$config.columns.map(c =>
         this.headersMap[c] || { text: this.$options.filters.capitalize(c), value: 'attributes.' + c } )
     },
@@ -634,7 +633,7 @@ export default {
     findMatch(data, props){
       const arrayLen = (data.targetAttributes).length
       let count = 0
-
+  debugger
       for (let i=0; i < arrayLen; i++) {
         const filter = new RegExp(data.regexFilters[i]) //create RegExp
         // verify if there is a match for RegExp against target column
