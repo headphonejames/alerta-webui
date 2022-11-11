@@ -92,7 +92,7 @@
             >
               <div
                 v-for="data in dict"
-                :key="data.response"
+                :key="data.output"
               >                
                 <div v-html="findMatch(data,props)" />
               </div>
@@ -638,7 +638,8 @@ export default {
         const columnData = (props.item[columnName]).toLowerCase()
         return filter.test(columnData)
       })
-      return validMatch ? additionalRespObj.response : null
+      // return link if all regex checks pass
+      return validMatch ? additionalRespObj.output : null 
     },
     attributeMatch(item){
       return this.cars.id === carID ? true : false

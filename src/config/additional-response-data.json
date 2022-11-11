@@ -1,6 +1,6 @@
 [
     {
-      "response": "<a href=https://link-to-correct-resource.com>handbook1</a>",
+      "output": "<a href=https://link-to-correct-resource.com>handbook1</a>",
       "matches": [
         {
           "column":"event",
@@ -13,7 +13,7 @@
       ]
     },
     {
-      "response": "<a href=https://link-to-correct-resource.com>handbook2</a>",
+      "output": "<a href=https://link-to-correct-resource.com>handbook2</a>",
       "matches": [
         {
           "column":"resource",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "response": "<a href=https://link-to-correct-resource.com>handbook3</a>",
+      "output": "<a href=https://link-to-correct-resource.com>handbook3</a>",
       "matches": [
         {
           "column":"text",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "response": "<a href=https://link-to-correct-resource.com>handbook4</a>",
+      "output": "<a href=https://link-to-correct-resource.com>handbook4</a>",
       "matches": [
         {
           "column":"text",
