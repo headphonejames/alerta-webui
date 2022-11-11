@@ -497,7 +497,7 @@ import moment from 'moment'
 import i18n from '@/plugins/i18n'
 
 //imported mapping dictionary
-import dictData from '../AdditionalColumn/mappings.json'
+import dictData from '../config/additional-response-data'
 
 export default {
   components: {
@@ -629,22 +629,16 @@ export default {
     }
   },
   methods: {   
-    // method for mapping column data to operational runbooks
-    findMatch(data, props){
-      const arrayLen = (data.targetAttributes).length
-      let count = 0
-  debugger
-      for (let i=0; i < arrayLen; i++) {
-        const filter = new RegExp(data.regexFilters[i]) //create RegExp
-        // verify if there is a match for RegExp against target column
-        if (filter.test(props.item[data.targetAttributes[i]]) == true) {
-          count += 1
-        }
-      }
-
-      return count == arrayLen-1 
-        ? data.response // return operational runbook link
-        : null
+    // method for mapping table data to links from additional-response-data.json
+    findMatch(additionalRespObj, props){   
+      const validMatch = additionalRespObj.matches.every(matchesObj => {
+        // make comparisons case-insensitive
+        const filter = new RegExp((matchesObj.regex).toLowerCase())
+        const columnName = (matchesObj.column).toLowerCase()
+        const columnData = (props.item[columnName]).toLowerCase()
+        return filter.test(columnData)
+      })
+      return validMatch ? additionalRespObj.response : null
     },
     attributeMatch(item){
       return this.cars.id === carID ? true : false
