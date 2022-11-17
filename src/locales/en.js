@@ -124,6 +124,7 @@ export const en = {
   Description: 'Description',
   Attribute: 'Attribute',
   TimeoutLeft: 'Timeout',
+  Tester: 'Tester',
   Dupl: 'Dupl.',
   PrevSeverity: 'Prev. Severity',
   Duration: 'Duration',
