@@ -593,14 +593,21 @@ export default {
       },
       set(value) {
         const alerts = this.$store.state.alerts.alerts
-        if (this.shiftDown && value.length == 2) {
-          const firstIndex = alerts.findIndex(x => x.id === value[0].id)
-          const secondIndex = alerts.findIndex(x => x.id === value[1].id)
-          if (Math.abs(firstIndex-secondIndex) > 1) {
-            const lowIndex = Math.min(firstIndex, secondIndex) + 1
-            const highIndex = Math.max(firstIndex, secondIndex) - 1
-            for (let i = lowIndex; i <= highIndex; i++) {
-              value.push(alerts[i])
+        if (this.shiftDown) {
+          // check if there is a gap between selected and previously
+          let indexes = []
+          for (let i = 0; i < value.length; i++) {
+            const alertIndex = alerts.findIndex((x => x.id === value[i].id))
+            indexes.push(alertIndex)
+            if (i > 0) {
+              if (Math.abs(alertIndex - indexes[i - 1]) > 1) {
+                const lowIndex = Math.min(alertIndex, indexes[i - 1])
+                const highIndex = Math.max(alertIndex, indexes[i - 1])
+                // fill in all the missing alerts
+                for (let j = lowIndex + 1; j < highIndex; j++) {
+                  value.push(alerts[j])
+                }
+              }
             }
           }
         }
