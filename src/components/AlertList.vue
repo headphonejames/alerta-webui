@@ -632,11 +632,16 @@ export default {
     // method for mapping table data to links from additional-response-data.json
     findMatch(additionalRespObj, props){   
       const validMatch = additionalRespObj.matches.every(matchesObj => {
-        // make comparisons case-insensitive
-        const filter = new RegExp((matchesObj.regex).toLowerCase())
-        const columnName = (matchesObj.column).toLowerCase()
-        const columnData = (props.item[columnName]).toLowerCase()
-        return filter.test(columnData)
+        // error handling to prevent reading null keys
+        if (!matchesObj.regex || !matchesObj.column){
+          return
+        } else {
+          // make comparisons case-insensitive
+          const filter = new RegExp((matchesObj.regex).toLowerCase())
+          const columnName = (matchesObj.column).toLowerCase()
+          const columnData = (props.item[columnName]).toLowerCase()
+          return filter.test(columnData)
+        }       
       })
       // return link if all regex checks pass
       return validMatch ? additionalRespObj.output : null 
