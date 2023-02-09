@@ -1,10 +1,11 @@
 import bootstrap from './services/config'
 
-import Vue from 'vue'
+import {createApp} from 'vue'
 
 import {createStore} from './store'
 import {createRouter} from './router'
-import {sync} from 'vuex-router-sync'
+//import {sync} from 'vuex-router-sync'
+//Need Vue 3 replacement for this
 import axios from 'axios'
 import {makeStore} from '@/store/modules/auth.store'
 import {makeInterceptors} from '@/services/api/interceptors'
@@ -29,10 +30,10 @@ import '@/filters/until'
 
 export const store = createStore()
 
+let app;
 bootstrap.getConfig().then(config => {
   const router = createRouter(config.base_path)
 
-  Vue.prototype.$config = config
   store.dispatch('updateConfig', config)
   store.dispatch('alerts/setFilter', config.filter)
   store.registerModule('auth', makeStore(vueAuth(config)))
@@ -43,16 +44,21 @@ bootstrap.getConfig().then(config => {
   axios.interceptors.response.use(undefined, interceptors.interceptErrors)
   axios.interceptors.response.use(undefined, interceptors.redirectToLogin)
 
-  Vue.use(GoogleAnalytics, {
-    trackingId: config.tracking_id,
-    router
-  })
-  sync(store, router)
-
-  new Vue({
+  app = createApp({
     router,
     store,
     i18n,
-    render: (h: any) => h(App)
-  }).$mount('#app')
+    render: (h:any) => h(App)
+  })
+  app.config.globalProperties.$config = config
+
+  app.use(GoogleAnalytics, {
+    trackingId: config.tracking_id,
+    router
+  })
+  //sync(store, router)
+
+  app.mount('#app')
 })
+
+export default app;
