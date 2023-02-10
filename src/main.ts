@@ -4,8 +4,7 @@ import {createApp} from 'vue'
 
 import {createStore} from './store'
 import {createRouter} from './router'
-//import {sync} from 'vuex-router-sync'
-//Need Vue 3 replacement for this
+import {sync} from 'vuex-router-sync'
 import axios from 'axios'
 import {makeStore} from '@/store/modules/auth.store'
 import {makeInterceptors} from '@/services/api/interceptors'
@@ -56,7 +55,7 @@ bootstrap.getConfig().then(config => {
     trackingId: config.tracking_id,
     router
   })
-  //sync(store, router)
+  sync(store, router)
 
   app.mount('#app')
 })
