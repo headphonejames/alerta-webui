@@ -73,7 +73,7 @@
             <span
               v-if="col == 'id'"
             >
-              {{ props.item.id | shortId }}
+              {{ $filters.shortId(props.item.id) }}
             </span>
             <span
               v-if="col == 'resource'"
@@ -110,7 +110,7 @@
                 :class="['label', 'label-' + props.item.severity.toLowerCase()]"
                 :style="fontStyle"
               >
-                {{ props.item.severity | capitalize }}
+                {{ $filters.capitalize(props.item.severity) }}
               </span>
             </span>
             <!-- Additional column for jira links -->
@@ -137,7 +137,7 @@
                 class="label"
                 :style="fontStyle"
               >
-                {{ props.item.status | capitalize }}
+                {{ $filters.capitalize(props.item.status) }}
 
               </span>
               <span
@@ -216,7 +216,7 @@
                 class="label"
                 :style="fontStyle"
               >
-                {{ props.item.type | splitCaps }}
+                {{ $filters.splitCaps(props.item.type) }}
               </span>
             </span>
             <span
@@ -230,13 +230,13 @@
             <span
               v-if="col == 'timeout'"
             >
-              {{ props.item.timeout | hhmmss }}
+              {{ $filter.hhmmss(props.item.timeout) }}
             </span>
             <span
               v-if="col == 'timeoutLeft'"
               class="text-xs-right"
             >
-              {{ timeoutLeft(props.item) | hhmmss }}
+              {{ $filters.hhmmss(timeoutLeft(props.item)) }}
             </span>
             <!-- rawData not supported -->
             <span
@@ -256,7 +256,7 @@
                 class="label"
                 :style="fontStyle"
               >
-                {{ props.item.repeat | capitalize }}
+                {{ $filters.capitalize(props.item.repeat) }}
               </span>
             </span>
             <span
@@ -266,7 +266,7 @@
                 :class="['label', 'label-' + props.item.previousSeverity.toLowerCase()]"
                 :style="fontStyle"
               >
-                {{ props.item.previousSeverity | capitalize }}
+                {{ $filters.capitalize(props.item.previousSeverity) }}
               </span>
             </span>
             <!-- trendIndication not supported -->
@@ -282,12 +282,12 @@
               v-if="col == 'duration'"
               class="text-xs-right"
             >
-              {{ duration(props.item) | hhmmss }}
+              {{ $filters.hhmmss(duration(props.item)) }}
             </span>
             <span
               v-if="col == 'lastReceiveId'"
             >
-              {{ props.item.lastReceiveId | shortId }}
+              {{ $filters.shortId(props.item.lastReceiveId) }}
             </span>
             <span
               v-if="col == 'lastReceiveTime'"
@@ -481,7 +481,7 @@
                     :key="i"
                     @click.stop="takeAction(props.item.id, action)"
                   >
-                    <v-list-tile-title>{{ action | splitCaps }}</v-list-tile-title>
+                    <v-list-tile-title>{{ $filters.splitCaps(action) }}</v-list-tile-title>
                   </v-list-tile>
                 </v-list>
               </v-menu>
