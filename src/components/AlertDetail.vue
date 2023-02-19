@@ -582,7 +582,7 @@
                     </div>
                     <div class="flex xs6 text-xs-left">
                       <div>
-                        <span v-html="item.text" />
+                        <span>{{ item.text }}</span>
                       </div>
                     </div>
                   </div>
@@ -717,11 +717,11 @@
                     <div class="flex xs6 text-xs-left">
                       <div>
                         <a
-                          :href="this.item.attributes.jira.url"
+                          :href="item.attributes.jira.url"
                           target="_blank"
                           @click.stop
                         >
-                          {{ this.item.attributes.jira.key }}
+                          {{ item.attributes.jira.key }}
                         </a>
                       </div>
                     </div>
@@ -753,8 +753,9 @@
                       <div
                         v-else-if="typeof value === 'string' && (value.includes('http://') || value.includes('https://'))"
                         class="link-text"
-                        v-html="value"
-                      />
+                      >
+                        {{ value }}
+                      </div>
                       <div
                         v-else
                         class="clickable"

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-template-shadow -->
 <template>
   <div v-if="attributesExist">
     <div v-if="noJiraAssigned">
@@ -7,7 +8,7 @@
             <div class="flex xs3 text-xs-left">
               <div class="text-center">
                 <v-menu offset-y>
-                  <template v-slot:activator="{ on, attrs }">
+                  <template #activator="{ on, attrs }">
                     <v-btn
                       color="primary"
                       dark
@@ -91,13 +92,16 @@
 
 import debounce from 'lodash/debounce'
 
+// added 'required: true' to remove compiler errors
 export default {
   props: {
     id: {
       type: String,
+      required: true,
     },
     attributes: {
       type: Object,
+      required: true,
     }
   },
   data: () => ({
