@@ -547,7 +547,7 @@ import Snackbar from '@/components/lib/Snackbar.vue'
 import i18n from '@/plugins/i18n'
 
 export default {
-  name: 'App',
+  name: 'App', 
   components: {
     Banner,
     ProfileMe,
@@ -561,8 +561,8 @@ export default {
     maxNoteLength: 200,
     minNoteLength: 0,
     textRules: [
-      v => !!v || i18n.t('TextIsRequired'),
-      v => (v && v.length <= vm.maxNoteLength) || `${i18n.t('TextMustBeLessThan')} ${vm.maxNoteLength} ${i18n.t('characters')}`
+      v => !!v || i18n.global.t('TextIsRequired'),
+      v => (v && v.length <= vm.maxNoteLength) || `${i18n.global.t('TextMustBeLessThan')} ${vm.maxNoteLength} ${i18n.global.t('characters')}`
     ],
     hasFocus: false,
     menu: false,
@@ -571,7 +571,7 @@ export default {
     dialog: false,
     drawer: false,
     navbar: {
-      signin: { icon: 'account_circle', text: i18n.t('SignIn'), path: '/login' }
+      signin: { icon: 'account_circle', text: i18n.global.t('SignIn'), path: '/login' }
     },
     error: false
   }),
@@ -580,7 +580,7 @@ export default {
       return [
         {
           icon: 'list',
-          text: i18n.t('Alerts'),
+          text: i18n.global.t('Alerts'),
           path: '/alerts',
           perms: 'read:alerts',
           show: true
@@ -588,62 +588,62 @@ export default {
         {
           icon: 'expand_less',
           'icon-alt': 'expand_more',
-          text: i18n.t('Searches'),
+          text: i18n.global.t('Searches'),
           model: false,
           queries: this.queries
         },
         {
           icon: 'timer',
-          text: i18n.t('Heartbeats'),
+          text: i18n.global.t('Heartbeats'),
           path: '/heartbeats',
           perms: 'read:heartbeats',
           show: true
         },
         {
           icon: 'person',
-          text: i18n.t('Users'),
+          text: i18n.global.t('Users'),
           path: '/users',
           perms: 'admin:users',
           show: true
         },
         {
           icon: 'people',
-          text: i18n.t('Groups'),
+          text: i18n.global.t('Groups'),
           path: '/groups',
           perms: 'read:groups',
           show: this.$config.provider == 'basic'
         },
         {
           icon: 'domain',
-          text: i18n.t('Customers'),
+          text: i18n.global.t('Customers'),
           path: '/customers',
           perms: 'read:customers',
           show: this.$config.customer_views
         },
         {
           icon: 'notifications_off',
-          text: i18n.t('Blackouts'),
+          text: i18n.global.t('Blackouts'),
           path: '/blackouts',
           perms: 'read:blackouts',
           show: true
         },
         {
           icon: 'security',
-          text: i18n.t('Permissions'),
+          text: i18n.global.t('Permissions'),
           path: '/perms',
           perms: 'read:perms',
           show: true
         },
         {
           icon: 'vpn_key',
-          text: i18n.t('APIKeys'),
+          text: i18n.global.t('APIKeys'),
           path: '/keys',
           perms: 'read:keys',
           show: this.isLoggedIn || !this.isAuthRequired
         },
         {
           icon: 'assessment',
-          text: i18n.t('Reports'),
+          text: i18n.global.t('Reports'),
           path: '/reports',
           perms: 'read:alerts',
           show: true
@@ -651,14 +651,14 @@ export default {
         { divider: true},
         {
           icon: 'account_circle',
-          text: i18n.t('Profile'),
+          text: i18n.global.t('Profile'),
           path: '/profile',
           perms: null,
           show: this.isLoggedIn
         },
         {
           icon: 'settings',
-          text: i18n.t('Settings'),
+          text: i18n.global.t('Settings'),
           path: '/settings',
           perms: null,
           show: this.isLoggedIn
@@ -666,7 +666,7 @@ export default {
         // { icon: 'chat_bubble', text: 'Send feedback' },
         {
           icon: 'help',
-          text: i18n.t('Help'),
+          text: i18n.global.t('Help'),
           path: '/help',
           appendIcon: 'open_in_new',
           perms: null,
@@ -674,7 +674,7 @@ export default {
         },
         {
           icon: 'info',
-          text: i18n.t('About'),
+          text: i18n.global.t('About'),
           path: '/about',
           perms: 'read:management',
           show: true
@@ -755,7 +755,7 @@ export default {
       }
     },
     languagePref(val) {
-      i18n.locale = val
+      i18n.global.locale = val
     }
   },
   mounted() {
@@ -859,7 +859,7 @@ export default {
       this.$store.dispatch('alerts/unwatchAlert', id)
     },
     bulkDeleteAlert() {
-      confirm(i18n.t('ConfirmDelete')) &&
+      confirm(i18n.global.t('ConfirmDelete')) &&
         Promise.all(this.selected.map(a => this.$store.dispatch('alerts/deleteAlert', a.id, false))).then(() => {
           this.clearSelected()
           this.$store.dispatch('alerts/getAlerts')
