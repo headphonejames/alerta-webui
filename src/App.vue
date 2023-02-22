@@ -481,7 +481,7 @@
         fluid
       >
         <v-layout>
-          <v-flex>
+          <v-col>
             <v-card>
               <v-card-text>
                 <v-text-field
@@ -497,7 +497,7 @@
                 />
               </v-card-text>
             </v-card>
-          </v-flex>
+          </v-col>
         </v-layout>
       </v-container>
     </div>
