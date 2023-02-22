@@ -234,7 +234,7 @@
           <v-tab ripple>
             <v-icon>info</v-icon>&nbsp;{{ $t('Details') }}
           </v-tab>
-          <v-tab-item
+          <v-window-item
             :transition="false"
             :reverse-transition="false"
           >
@@ -768,12 +768,12 @@
                 </div>
               </v-card-text>
             </v-card>
-          </v-tab-item>
+          </v-window-item>
 
           <v-tab ripple>
             <v-icon>history</v-icon>&nbsp;{{ $t('History') }}
           </v-tab>
-          <v-tab-item
+          <v-window-item
             :transition="false"
             :reverse-transition="false"
           >
@@ -841,12 +841,12 @@
                 </template>
               </v-data-table>
             </div>
-          </v-tab-item>
+          </v-window-item>
 
           <v-tab ripple>
             <v-icon>assessment</v-icon>&nbsp;{{ $t('Data') }}
           </v-tab>
-          <v-tab-item
+          <v-window-item
             :transition="false"
             :reverse-transition="false"
           >
@@ -860,7 +860,7 @@
                 <span class="console-text">{{ item.rawData || 'no raw data' }}</span>
               </v-card-text>
             </v-card>
-          </v-tab-item>
+          </v-window-item>
         </v-tabs>
       </v-card>
 

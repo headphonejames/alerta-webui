@@ -314,7 +314,7 @@
               ...&nbsp;
               <v-btn
                 v-if="isAcked(props.item.status) || isClosed(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -329,7 +329,7 @@
 
               <v-btn
                 v-if="!isWatched(props.item.tags)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -343,7 +343,7 @@
               </v-btn>
               <v-btn
                 v-if="isWatched(props.item.tags)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -358,7 +358,7 @@
 
               <v-btn
                 v-if="isOpen(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -372,7 +372,7 @@
               </v-btn>
               <v-btn
                 v-if="isAcked(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -387,7 +387,7 @@
 
               <v-btn
                 v-if="isOpen(props.item.status) || isAcked(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -401,7 +401,7 @@
               </v-btn>
               <v-btn
                 v-if="isShelved(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -416,7 +416,7 @@
 
               <v-btn
                 v-if="!isClosed(props.item.status)"
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -429,7 +429,7 @@
                 </v-icon>
               </v-btn>
               <v-btn
-                flat
+                variant="flat"
                 icon
                 small
                 class="btn--plain pa-0 ma-0"
@@ -461,7 +461,7 @@
               >
                 <v-btn
                   slot="activator"
-                  flat
+                  variant="flat"
                   icon
                   small
                   class="btn--plain pa-0 ma-0"
