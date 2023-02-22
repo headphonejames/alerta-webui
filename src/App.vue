@@ -891,7 +891,7 @@ export default {
 
 <style>
 
-@import "./assets/css/fonts.css";
+@import "./assets/css/fonts.css"; 
 
 .toolbar-title {
   color: inherit;
