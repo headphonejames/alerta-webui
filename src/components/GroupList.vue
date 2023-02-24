@@ -46,9 +46,8 @@
                         {{ data.item }}
                       </template>
                       <template v-else>
-                        <v-list-item-avatar>
-                          <v-icon>person</v-icon>
-                        </v-list-item-avatar>
+                        <v-list-item :append-avatar="person" />
+                        <!-- <v-icon>person</v-icon> -->
                         <v-list-item-title>{{ data.item.name }}</v-list-item-title>
                         <v-list-item-subtitle>{{ data.item.email }}</v-list-item-subtitle>
                       </template>
