@@ -502,11 +502,11 @@
       </v-container>
     </div>
 
-    <v-content>
+    <v-main>
       <banner />
       <router-view />
       <snackbar />
-    </v-content>
+    </v-main>
 
     <div v-if="!isKiosk">
       <span class="hidden-sm-and-up">
