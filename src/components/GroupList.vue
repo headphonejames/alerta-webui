@@ -185,8 +185,8 @@
       </v-card-title>
 
       <v-data-table
-        :headers="headers"
-        :items="groups"
+        :header="headers"
+        :item="groups"
         :rows-per-page-items="rowsPerPageItems"
         :pagination.sync="pagination"
         class="px-2"
