@@ -5,12 +5,13 @@ module.exports = {
     browser: true
   },
   extends: [
-    'plugin:vue/recommended', 
+    'plugin:vue/vue3-essential', 
     '@vue/typescript'
   ],
   rules: {
     semi: ['error', 'never'],
     'vue/multi-word-component-names': 'off', 
+    'vue/no-deprecated-slot-attribute': 'error',
     'no-console': 'warn',
     'no-debugger': 'error',
     quotes: ['error', 'single'],
