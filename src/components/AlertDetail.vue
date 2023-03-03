@@ -784,7 +784,7 @@
                   :header="headersByScreenSize"
                   :item="history"
                   item-key="index"
-                  :pagination.sync="pagination"
+                  v-model:pagination="pagination"
                   sort-icon="arrow_drop_down"
                 >
                   <template

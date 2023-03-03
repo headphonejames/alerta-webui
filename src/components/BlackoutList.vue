@@ -280,7 +280,7 @@
         :header="computedHeaders"
         :item="blackouts"
         :rows-per-page-items="rowsPerPageItems"
-        :pagination.sync="pagination"
+        v-model:pagination="pagination"
         class="px-2"
         :search="search"
         :loading="isLoading"

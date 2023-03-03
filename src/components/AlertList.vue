@@ -6,7 +6,7 @@
       :header="customHeaders"
       :item="alerts"
       item-key="id"
-      :pagination.sync="pagination"
+      v-model:pagination="pagination"
       :total-items="pagination.totalItems"
       :rows-per-page-items="pagination.rowsPerPageItems"
       :loading="isSearching"
