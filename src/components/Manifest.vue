@@ -5,10 +5,7 @@
     class="px-2"
     hide-actions
   >
-    <template
-      slot="items"
-      slot-scope="props"
-    >
+    <template #items="props">
       <td class="text-xs-center">
         {{ version }}
       </td>
@@ -31,11 +28,13 @@
           target="_blank"
         >
           <v-tooltip end>
-            {{ $t('OpenGitHub') }}
-            <v-icon
-              slot="activator"
-              small
-            >launch</v-icon>
+            <template #activator="{props}">
+              {{ $t('OpenGitHub') }}
+              <v-icon
+                v-bind="props"
+                small
+              >launch</v-icon>
+            </template>
           </v-tooltip>
         </a>
       </td>
@@ -50,15 +49,17 @@
           :key="copyIconText"
           top
         >
-          <v-icon
-            slot="activator"
-            small
-            class="px-1"
-            @click="clipboardCopy($config.endpoint)"
-          >
-            content_copy
-          </v-icon>
-          <span>{{ copyIconText }}</span>
+          <template #activator="{props}">
+            <v-icon
+              v-bind="props"
+              small
+              class="px-1"
+              @click="clipboardCopy($config.endpoint)"
+            >
+              content_copy
+            </v-icon>
+            <span>{{ copyIconText }}</span>
+          </template>
         </v-tooltip>
       </td>
     </template>

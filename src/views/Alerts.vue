@@ -99,7 +99,6 @@
         <template #activator="{ props }">
           <v-btn
             v-bind="props"
-            slot="activator"
             variant="flat"
             icon
           >
@@ -344,7 +343,7 @@ export default {
     this.cancelTimer()
     this.refreshAlerts()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.cancelTimer()
   },
   methods: {

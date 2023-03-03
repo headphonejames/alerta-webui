@@ -19,7 +19,7 @@
 
         <v-tooltip bottom>
           <v-btn
-            slot="activator"
+            #activator
             :disabled="!isAcked(item.status) && !isClosed(item.status)"
             icon
             class="btn--plain px-1 mx-0"
@@ -37,7 +37,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="!isWatched(item.tags)"
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="watchAlert(item.id)"
@@ -54,7 +54,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="isWatched(item.tags)"
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="unwatchAlert(item.id)"
@@ -71,7 +71,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="!isAcked(item.status)"
-            slot="activator"
+            #activator
             :disabled="!isOpen(item.status)"
             icon
             class="btn--plain px-1 mx-0"
@@ -89,7 +89,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="isAcked(item.status)"
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="takeAction(item.id, 'unack')"
@@ -106,7 +106,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="!isShelved(item.status)"
-            slot="activator"
+            #activator
             :disabled="!isOpen(item.status) && !isAcked(item.status)"
             icon
             class="btn--plain px-1 mx-0"
@@ -124,7 +124,7 @@
         <v-tooltip bottom>
           <v-btn
             v-show="isShelved(item.status)"
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="takeAction(item.id, 'unshelve')"
@@ -140,7 +140,7 @@
 
         <v-tooltip bottom>
           <v-btn
-            slot="activator"
+            #activator
             :disabled="isClosed(item.status)"
             icon
             class="btn--plain px-1 mx-0"
@@ -157,7 +157,7 @@
 
         <v-tooltip bottom>
           <v-btn
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="deleteAlert(item.id)"
@@ -176,7 +176,7 @@
           bottom
         >
           <v-btn
-            slot="activator"
+            #activator
             icon
             class="btn--plain px-1 mx-0"
             @click="clipboardCopy(JSON.stringify(item, null, 4))"
@@ -192,12 +192,12 @@
 
         <v-tooltip bottom>
           <v-menu
-            slot="activator"
+            #activator
             bottom
             start
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain px-1 mx-0"
             >
@@ -788,8 +788,7 @@
                   sort-icon="arrow_drop_down"
                 >
                   <template
-                    slot="items"
-                    slot-scope="props"
+                    #items="props"
                   >
                     <td class="hidden-sm-and-down">
                       <span class="console-text">{{ $filters.shortId(props.item.id) }}</span>

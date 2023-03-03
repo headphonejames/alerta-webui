@@ -24,7 +24,7 @@
                   >
                     <v-text-field
                       v-if="editedItem.key"
-                      slot="activator"
+                      #activator
                       v-model="editedItem.key"
                       :label="$t('APIKey')"
                       readonly
@@ -78,8 +78,7 @@
                     multiple
                   >
                     <template
-                      slot="selection"
-                      slot-scope="data"
+                      #selection="data"
                     >
                       <v-chip
                         :selected="data.selected"
@@ -105,7 +104,7 @@
                     min-width="290px"
                   >
                     <v-text-field
-                      slot="activator"
+                      #activator
                       v-model="pickerDate"
                       :label="$t('Expires')"
                       prepend-icon="event"
@@ -165,7 +164,7 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
+              <v-icon #activator>
                 check_circle
               </v-icon>
               <span>{{ $t('Active') }}</span>
@@ -176,7 +175,7 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
+              <v-icon #activator>
                 error_outline
               </v-icon>
               <span>{{ $t('Expired') }}</span>
@@ -205,8 +204,7 @@
         sort-icon="arrow_drop_down"
       >
         <template
-          slot="items"
-          slot-scope="props"
+          #items="props"
         >
           <td
             class="text-no-wrap"
@@ -218,7 +216,7 @@
               top
             >
               <v-icon
-                slot="activator"
+                #activator
                 :value="props.item.key"
                 style="font-size: 16px;"
                 @click="clipboardCopy(props.item.key)"
@@ -234,7 +232,7 @@
               top
             >
               <v-icon
-                slot="activator"
+                #activator
                 color="primary"
                 small
               >
@@ -247,7 +245,7 @@
               top
             >
               <v-icon
-                slot="activator"
+                #activator
                 color="error"
                 small
               >
@@ -328,7 +326,7 @@
             </v-btn>
           </td>
         </template>
-        <template slot="no-data">
+        <template #no-data>
           <v-alert
             :value="true"
             color="error"
@@ -338,7 +336,7 @@
           </v-alert>
         </template>
         <v-alert
-          slot="no-results"
+          #no-results
           :value="true"
           color="error"
           icon="warning"

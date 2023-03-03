@@ -94,10 +94,7 @@
         must-sort
         sort-icon="arrow_drop_down"
       >
-        <template
-          slot="items"
-          slot-scope="props"
-        >
+        <template #items="props">
           <td>{{ props.item.match }}</td>
           <td>
             <v-chip>
@@ -134,7 +131,7 @@
             </v-btn>
           </td>
         </template>
-        <template slot="no-data">
+        <template #no-data>
           <v-alert
             :value="true"
             color="error"
@@ -143,14 +140,15 @@
             {{ $t('NoDisplay') }}
           </v-alert>
         </template>
-        <v-alert
-          slot="no-results"
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
-        </v-alert>
+        <template #no-results>
+          <v-alert
+            :value="true"
+            color="error"
+            icon="warning"
+          >
+            {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
+          </v-alert>
+        </template>
       </v-data-table>
     </v-card>
 

@@ -173,7 +173,7 @@
               location="bottom"
             >
               <v-switch
-                slot="activator"
+                #activator
                 :model-value="isWatch"
                 hide-details
                 open-delay="3000"
@@ -190,7 +190,7 @@
           >
             <v-btn
               v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              slot="activator"
+              #activator
               icon
               @click="toggleFullScreen"
             >
@@ -204,7 +204,7 @@
           >
             <v-btn
               v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              slot="activator"
+              #activator
               icon
             >
               <v-icon @click="refresh">
@@ -224,7 +224,7 @@
               <template #activator="{ props }">
                 <v-btn
                   v-bind="props"
-                  slot="activator"
+                  #activator
                   icon
                 >
                   <v-avatar
@@ -301,7 +301,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="toggleWatch()"
@@ -317,7 +317,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="bulkAckAlert()"
@@ -333,7 +333,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="showAddNoteForm = !showAddNoteForm"
@@ -348,7 +348,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="bulkShelveAlert()"
@@ -364,7 +364,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="takeBulkAction('close')"
@@ -380,7 +380,7 @@
             location="bottom"
           >
             <v-btn
-              slot="activator"
+              #activator
               icon
               class="btn--plain"
               @click="bulkDeleteAlert()"
@@ -399,7 +399,7 @@
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
-                slot="activator"
+                #activator
                 variant="flat"
                 icon
                 size="small"
@@ -435,7 +435,7 @@
           >
             <v-btn
               v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              slot="activator"
+              #activator
               icon
               @click="toggleFullScreen"
             >
@@ -449,7 +449,7 @@
           >
             <v-btn
               v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              slot="activator"
+              #activator
               icon
             >
               <v-icon @click="refresh">
@@ -469,7 +469,7 @@
             <template #activator="{ props }">
               <v-btn
                 v-bind="props"
-                slot="activator"
+                #activator
                 icon
               >
                 <v-avatar

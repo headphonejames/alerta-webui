@@ -13,10 +13,12 @@
           variant="flat"
         >
           <v-tooltip bottom>
-            <v-icon slot="activator">
-              check_circle
-            </v-icon>
-            <span>{{ $t('OK') }}</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                check_circle
+              </v-icon>
+              <span>{{ $t('OK') }}</span>
+            </template>
           </v-tooltip>
         </v-btn>
         <v-btn
@@ -24,10 +26,12 @@
           variant="flat"
         >
           <v-tooltip bottom>
-            <v-icon slot="activator">
-              access_time
-            </v-icon>
-            <span>{{ $t('Slow') }}</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                access_time
+              </v-icon>
+              <span>{{ $t('Slow') }}</span>
+            </template>
           </v-tooltip>
         </v-btn>
         <v-btn
@@ -35,10 +39,12 @@
           variant="flat"
         >
           <v-tooltip bottom>
-            <v-icon slot="activator">
-              timer_off
-            </v-icon>
-            <span>{{ $t('Expired') }}</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                timer_off
+              </v-icon>
+              <span>{{ $t('Expired') }}</span>
+            </template>
           </v-tooltip>
         </v-btn>
       </v-btn-toggle>
@@ -63,10 +69,7 @@
       must-sort
       sort-icon="arrow_drop_down"
     >
-      <template
-        slot="items"
-        slot-scope="props"
-      >
+      <template #items="props">
         <td>{{ props.item.origin }}</td>
         <td
           v-if="$config.customer_views"
@@ -132,7 +135,7 @@
           </v-btn>
         </td>
       </template>
-      <template slot="no-data">
+      <template #no-data>
         <v-alert
           :value="true"
           color="error"
@@ -141,14 +144,15 @@
           {{ $t('NoDisplay') }}
         </v-alert>
       </template>
-      <v-alert
-        slot="no-results"
-        :value="true"
-        color="error"
-        icon="warning"
-      >
-        {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
-      </v-alert>
+      <template #no-results>
+        <v-alert
+          :value="true"
+          color="error"
+          icon="warning"
+        >
+          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
+        </v-alert>
+      </template>
     </v-data-table>
   </v-card>
 </template>

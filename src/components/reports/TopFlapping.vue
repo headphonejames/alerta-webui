@@ -17,7 +17,7 @@
         hide-actions
       >
         <template
-          v-slot:items="props"
+          #items="props"
         >
           <td>{{ props.item.event }}</td>
           <td class="text-xs-center">

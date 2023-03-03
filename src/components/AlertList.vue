@@ -17,8 +17,7 @@
       show-select
     >
       <template
-        slot="items"
-        slot-scope="props"
+        #items="props"
       >
         <tr
           :style="{ 'background-color': severityColor(props.item.severity) }"
@@ -461,7 +460,7 @@
                 start
               >
                 <v-btn
-                  slot="activator"
+                  #activator
                   variant="flat"
                   icon
                   small
@@ -490,7 +489,7 @@
           </td>
         </tr>
       </template>
-      <template slot="no-data">
+      <template #no-data>
         <div class="text-xs-center">
           <span v-if="isLoading">{{ $t('Loading') }}...</span>
           <span v-if="!isLoading">{{ $t('NoDataAvailable') }}</span>

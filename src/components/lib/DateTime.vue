@@ -1,7 +1,7 @@
 <template>
   <v-tooltip top>
     <span
-      slot="activator"
+      #activator
       class="text-no-wrap"
     >
       {{ $filters.date(value, displayMode, formatString) }}

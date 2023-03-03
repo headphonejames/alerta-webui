@@ -18,30 +18,36 @@
             v-if="profile.provider && profile.provider != 'basic'"
             top
           >
-            <v-icon slot="activator">
-              {{
-                provider[profile.provider].icon
-              }}
-            </v-icon>
-            <span>{{ provider[profile.provider].text }}</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                {{
+                  provider[profile.provider].icon
+                }}
+              </v-icon>
+              <span>{{ provider[profile.provider].text }}</span>
+            </template>
           </v-tooltip>
           <v-tooltip
             v-else-if="profile.email_verified"
             top
           >
-            <v-icon slot="activator">
-              verified_user
-            </v-icon>
-            <span>({{ $t('EmailVerified') }})</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                verified_user
+              </v-icon>
+              <span>({{ $t('EmailVerified') }})</span>
+            </template>
           </v-tooltip>
           <v-tooltip
             v-else
             top
           >
-            <v-icon slot="activator">
-              fas fa-user-times
-            </v-icon>
-            <span>{{ $t('EmailNotVerified') }}</span>
+            <template #activator="{props}">
+              <v-icon v-bind="props">
+                fas fa-user-times
+              </v-icon>
+              <span>{{ $t('EmailNotVerified') }}</span>
+            </template>
           </v-tooltip>
         </v-list-item-action>
       </v-list-item>

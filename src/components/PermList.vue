@@ -50,8 +50,7 @@
                     multiple
                   >
                     <template
-                      slot="selection"
-                      slot-scope="data"
+                      #selection="data"
                     >
                       <v-chip
                         :selected="data.selected"
@@ -104,8 +103,7 @@
             multiple
           >
             <template
-              slot="selection"
-              slot-scope="data"
+              #selection="data"
             >
               <v-chip
                 :selected="data.selected"
@@ -140,24 +138,23 @@
         must-sort
         sort-icon="arrow_drop_down"
       >
-        <template
-          slot="items"
-          slot-scope="props"
-        >
+        <template #items="props">
           <td>
             <v-chip small>
               <strong>{{ props.item.match }}</strong>&nbsp;
               <span>({{ $t('role') }})</span>
             </v-chip>
             <v-tooltip top>
-              <v-icon
-                v-if="systemRoles.includes(props.item.match)"
-                slot="activator"
-                small
-              >
-                lock
-              </v-icon>
-              <span>{{ $t('SystemRole') }}</span>
+              <template #activator="{props}">
+                <v-icon
+                  v-if="systemRoles.includes(props.item.match)"
+                  v-bind="props"
+                  small
+                >
+                  lock
+                </v-icon>
+                <span>{{ $t('SystemRole') }}</span>
+              </template>
             </v-tooltip>
           </td>
           <td>
@@ -201,7 +198,7 @@
             </v-btn>
           </td>
         </template>
-        <template slot="no-data">
+        <template #no-data>
           <v-alert
             :value="true"
             color="error"
@@ -210,14 +207,15 @@
             {{ $t('NoDisplay') }}
           </v-alert>
         </template>
-        <v-alert
-          slot="no-results"
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
-        </v-alert>
+        <template #no-results>
+          <v-alert
+            :value="true"
+            color="error"
+            icon="warning"
+          >
+            {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
+          </v-alert>
+        </template>
       </v-data-table>
     </v-card>
 

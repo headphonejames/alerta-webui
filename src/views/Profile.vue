@@ -135,17 +135,22 @@
                     readonly
                     prepend-icon="email"
                   >
-                    <template v-if="profile.email_verified">
+                    <template 
+                      v-if="profile.email_verified" 
+                      #append
+                    >
                       <v-icon
-                        slot="append"
                         color="success"
                       >
                         check
                       </v-icon>
                     </template>
-                    <template v-else>
+                    <template 
+                      v-else
+                      #append
+                    >
                       <v-icon
-                        slot="append"
+                        
                         color="error"
                       >
                         clear

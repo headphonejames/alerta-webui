@@ -53,17 +53,19 @@
                     max-width="290px"
                     min-width="290px"
                   >
-                    <v-text-field
-                      slot="activator"
-                      v-model="editedItem.period.startDate"
-                      :label="$t('StartDate')"
-                      prepend-icon="event"
-                    />
-                    <v-date-picker
-                      v-model="editedItem.period.startDate"
-                      no-title
-                      @update:model-value="menu1 = false"
-                    />
+                    <template #activator="{props}">
+                      <v-text-field
+                        v-bind="props"
+                        v-model="editedItem.period.startDate"
+                        :label="$t('StartDate')"
+                        prepend-icon="event"
+                      />
+                      <v-date-picker
+                        v-model="editedItem.period.startDate"
+                        no-title
+                        @update:model-value="menu1 = false"
+                      />
+                    </template>
                   </v-menu>
                 </v-col>
 
@@ -98,16 +100,18 @@
                     max-width="290px"
                     min-width="290px"
                   >
-                    <v-text-field
-                      slot="activator"
-                      v-model="editedItem.period.endDate"
-                      :label="$t('EndDate')"
-                    />
-                    <v-date-picker
-                      v-model="editedItem.period.endDate"
-                      no-title
-                      @update:model-value="menu2 = false"
-                    />
+                    <template #activator="{props}">
+                      <v-text-field
+                        v-bind="props"
+                        v-model="editedItem.period.endDate"
+                        :label="$t('EndDate')"
+                      />
+                      <v-date-picker
+                        v-model="editedItem.period.endDate"
+                        no-title
+                        @update:model-value="menu2 = false"
+                      />
+                    </template>
                   </v-menu>
                 </v-col>
 
@@ -160,10 +164,7 @@
                     multiple
                     chips
                   >
-                    <template
-                      slot="selection"
-                      slot-scope="data"
-                    >
+                    <template #selection="data">
                       <v-chip
                         :key="JSON.stringify(data.item)"
                         :selected="data.selected"
@@ -237,10 +238,12 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
-                notifications_paused
-              </v-icon>
-              <span>{{ $t('Active') }}</span>
+              <template #activator="{props}">
+                <v-icon v-bind="props">
+                  notifications_paused
+                </v-icon>
+                <span>{{ $t('Active') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -248,10 +251,12 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
-                schedule
-              </v-icon>
-              <span>{{ $t('Pending') }}</span>
+              <template #activator="{slots}">
+                <v-icon v-bind="props">
+                  schedule
+                </v-icon>
+                <span>{{ $t('Pending') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -259,7 +264,7 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
+              <v-icon #activator>
                 block
               </v-icon>
               <span>{{ $t('Expired') }}</span>
@@ -287,32 +292,33 @@
         must-sort
         sort-icon="arrow_drop_down"
       >
-        <template
-          slot="items"
-          slot-scope="props"
-        >
+        <template #items="props">
           <td>
             <v-tooltip top>
-              {{ $t('WholeEnvironment') }}
-              <v-icon
-                v-if="onlyEnvironment(props.item)"
-                slot="activator"
-                color="red"
-                small
-              >
-                report_problem
-              </v-icon>
+              <template #activator="{props}">
+                {{ $t('WholeEnvironment') }}
+                <v-icon
+                  v-if="onlyEnvironment(props.item)"
+                  v-bind="props"
+                  color="red"
+                  small
+                >
+                  report_problem
+                </v-icon>
+              </template>
             </v-tooltip>
             <v-tooltip top>
-              {{ $t('AllOrigin') }}
-              <v-icon
-                v-if="onlyOrigin(props.item)"
-                slot="activator"
-                color="red"
-                small
-              >
-                report_problem
-              </v-icon>
+              <template #activator="{props}">
+                {{ $t('AllOrigin') }}
+                <v-icon
+                  v-if="onlyOrigin(props.item)"
+                  v-bind="props"
+                  color="red"
+                  small
+                >
+                  report_problem
+                </v-icon>
+              </template>
             </v-tooltip>
           </td>
           <td
@@ -352,7 +358,7 @@
               {{ $filters.capitalize(props.item.status) }}
               <v-icon
                 v-if="props.item.status == 'pending'"
-                slot="activator"
+                #activator
                 light
                 small
               >
@@ -361,7 +367,7 @@
 
               <v-icon
                 v-if="props.item.status == 'active'"
-                slot="activator"
+                #activator
                 color="primary"
                 small
               >
@@ -370,7 +376,7 @@
 
               <v-icon
                 v-if="props.item.status == 'expired'"
-                slot="activator"
+                #activator
                 small
               >
                 block
@@ -442,7 +448,7 @@
             </v-btn>
           </td>
         </template>
-        <template slot="no-data">
+        <template #no-data>
           <v-alert
             :value="true"
             color="error"
@@ -452,7 +458,7 @@
           </v-alert>
         </template>
         <v-alert
-          slot="no-results"
+          #no-results
           :value="true"
           color="error"
           icon="warning"

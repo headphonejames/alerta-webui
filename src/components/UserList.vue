@@ -147,8 +147,7 @@
                     :disabled="!editedId"
                   >
                     <template
-                      slot="selection"
-                      slot-scope="data"
+                      #selection="data"
                     >
                       <v-chip
                         :selected="data.selected"
@@ -176,8 +175,7 @@
                     multiple
                   >
                     <template
-                      slot="selection"
-                      slot-scope="data"
+                      #selection="data"
                     >
                       <v-chip
                         :selected="data.selected"
@@ -238,10 +236,12 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
-                check_circle
-              </v-icon>
-              <span>{{ $t('Active') }}</span>
+              <template #activator="{props}">
+                <v-icon v-bind="props">
+                  check_circle
+                </v-icon>
+                <span>{{ $t('Active') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -249,10 +249,12 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon slot="activator">
-                block
-              </v-icon>
-              <span>{{ $t('Inactive') }}</span>
+              <template #activator="{props}">
+                <v-icon v-bind="props">
+                  block
+                </v-icon>
+                <span>{{ $t('Inactive') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
         </v-btn-toggle>
@@ -269,8 +271,7 @@
             multiple
           >
             <template
-              slot="selection"
-              slot-scope="data"
+              #selection="data"
             >
               <v-chip
                 :selected="data.selected"
@@ -306,45 +307,48 @@
         sort-icon="arrow_drop_down"
       >
         <template
-          slot="items"
-          slot-scope="props"
+          #items="props"
         >
           <td>{{ props.item.name }}</td>
           <td class="text-xs-center">
             <v-tooltip top>
-              <v-icon
-                slot="activator"
-                :color="props.item.status == 'active' ? 'primary' : ''"
-                @click="toggleUserStatus(props.item)"
-              >
-                {{
-                  props.item.status === 'active' ? 'toggle_on' : 'toggle_off'
-                }}
-              </v-icon>
-              <span>{{ $filters.capitalize(props.item.status) }}</span>
+              <template #activator="{props}">
+                <v-icon
+                  v-bind:="props"
+                  :color="props.item.status == 'active' ? 'primary' : ''"
+                  @click="toggleUserStatus(props.item)"
+                >
+                  {{
+                    props.item.status === 'active' ? 'toggle_on' : 'toggle_off'
+                  }}
+                </v-icon>
+                <span>{{ $filters.capitalize(props.item.status) }}</span>
+              </template>
             </v-tooltip>
           </td>
           <td>{{ props.item.login }}</td>
           <td>{{ props.item.email }}</td>
           <td class="text-xs-center">
             <v-tooltip top>
-              <v-icon
-                slot="activator"
-                @click="toggleEmailVerified(props.item)"
-              >
-                {{
-                  props.item.email_verified
-                    ? 'check_box'
-                    : 'check_box_outline_blank'
-                }}
-              </v-icon>
-              <span>
-                {{
-                  props.item.email_verified
-                    ? $t('EmailVerified')
-                    : $t('EmailNotVerified')
-                }}
-              </span>
+              <template #activator="{props}">
+                <v-icon
+                  v-bind="props"
+                  @click="toggleEmailVerified(props.item)"
+                >
+                  {{
+                    props.item.email_verified
+                      ? 'check_box'
+                      : 'check_box_outline_blank'
+                  }}
+                </v-icon>
+                <span>
+                  {{
+                    props.item.email_verified
+                      ? $t('EmailVerified')
+                      : $t('EmailNotVerified')
+                  }}
+                </span>
+              </template>
             </v-tooltip>
           </td>
           <td>
@@ -401,7 +405,7 @@
             </v-btn>
           </td>
         </template>
-        <template slot="no-data">
+        <template #no-data>
           <v-alert
             :value="true"
             color="error"
@@ -410,14 +414,15 @@
             {{ $t('NoDisplay') }}
           </v-alert>
         </template>
-        <v-alert
-          slot="no-results"
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}.
-        </v-alert>
+        <template #no-results>
+          <v-alert
+            :value="true"
+            color="error"
+            icon="warning"
+          >
+            {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}.
+          </v-alert>
+        </template>
       </v-data-table>
     </v-card>
 
