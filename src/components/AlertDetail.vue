@@ -18,208 +18,221 @@
         </v-btn>
 
         <v-tooltip bottom>
-          <v-btn
-            #activator
-            :disabled="!isAcked(item.status) && !isClosed(item.status)"
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="takeAction(item.id, 'open')"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              :disabled="!isAcked(item.status) && !isClosed(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="takeAction(item.id, 'open')"
             >
-              refresh
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Open') }}</span>
+              <v-icon
+                size="20px"
+              >
+                refresh
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Open') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="!isWatched(item.tags)"
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="watchAlert(item.id)"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="!isWatched(item.tags)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="watchAlert(item.id)"
             >
-              visibility
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Watch') }}</span>
+              <v-icon
+                size="20px"
+              >
+                visibility
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Watch') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="isWatched(item.tags)"
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="unwatchAlert(item.id)"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="isWatched(item.tags)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="unwatchAlert(item.id)"
             >
-              visibility_off
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Unwatch') }}</span>
+              <v-icon
+                size="20px"
+              >
+                visibility_off
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Unwatch') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="!isAcked(item.status)"
-            #activator
-            :disabled="!isOpen(item.status)"
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="ackAlert(item.id)"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="!isAcked(item.status)"
+              :disabled="!isOpen(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="ackAlert(item.id)"
             >
-              check
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Ack') }}</span>
+              <v-icon
+                size="20px"
+              >
+                check
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Ack') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="isAcked(item.status)"
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="takeAction(item.id, 'unack')"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="isAcked(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="takeAction(item.id, 'unack')"
             >
-              undo
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Unack') }}</span>
+              <v-icon
+                size="20px"
+              >
+                undo
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Unack') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="!isShelved(item.status)"
-            #activator
-            :disabled="!isOpen(item.status) && !isAcked(item.status)"
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="shelveAlert(item.id)"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="!isShelved(item.status)"
+              :disabled="!isOpen(item.status) && !isAcked(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="shelveAlert(item.id)"
             >
-              schedule
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Shelve') }}</span>
+              <v-icon
+                size="20px"
+              >
+                schedule
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Shelve') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            v-show="isShelved(item.status)"
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="takeAction(item.id, 'unshelve')"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              v-show="isShelved(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="takeAction(item.id, 'unshelve')"
             >
-              restore
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Unshelve') }}</span>
+              <v-icon
+                size="20px"
+              >
+                restore
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Unshelve') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            #activator
-            :disabled="isClosed(item.status)"
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="takeAction(item.id, 'close')"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              :disabled="isClosed(item.status)"
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="takeAction(item.id, 'close')"
             >
-              highlight_off
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Close') }}</span>
+              <v-icon
+                size="20px"
+              >
+                highlight_off
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Close') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-btn
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="deleteAlert(item.id)"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="deleteAlert(item.id)"
             >
-              delete
-            </v-icon>
-          </v-btn>
-          <span>{{ $t('Delete') }}</span>
+              <v-icon
+                size="20px"
+              >
+                delete
+              </v-icon>
+            </v-btn>
+            <span>{{ $t('Delete') }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip
           :key="copyIconText"
           bottom
         >
-          <v-btn
-            #activator
-            icon
-            class="btn--plain px-1 mx-0"
-            @click="clipboardCopy(JSON.stringify(item, null, 4))"
-          >
-            <v-icon
-              size="20px"
+          <template #activator>
+            <v-btn
+              icon
+              class="btn--plain px-1 mx-0"
+              @click="clipboardCopy(JSON.stringify(item, null, 4))"
             >
-              content_copy
-            </v-icon>
-          </v-btn>
-          <span>{{ copyIconText }}</span>
+              <v-icon
+                size="20px"
+              >
+                content_copy
+              </v-icon>
+            </v-btn>
+            <span>{{ copyIconText }}</span>
+          </template>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <v-menu
-            #activator
-            bottom
-            start
-          >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain px-1 mx-0"
+          <template #activator>
+            <v-menu
+              bottom
+              start
             >
-              <v-icon>
-                more_vert
-              </v-icon>
-            </v-btn>
+              <template #activator>
+                <v-btn
+                  icon
+                  class="btn--plain px-1 mx-0"
+                >
+                  <v-icon>
+                    more_vert
+                  </v-icon>
+                </v-btn>
+              </template>
 
-            <v-list
-              subheader
-            >
-              <v-list-subheader>Actions</v-list-subheader>
-              <v-divider />
-              <v-list-item
-                v-for="(action, i) in actions"
-                :key="i"
-                @click="takeAction(item.id, action)"
+              <v-list
+                subheader
               >
-                <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+                <v-list-subheader>Actions</v-list-subheader>
+                <v-divider />
+                <v-list-item
+                  v-for="(action, i) in actions"
+                  :key="i"
+                  @click="takeAction(item.id, action)"
+                >
+                  <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </template>
+
           <span>{{ $t('More') }}</span>
         </v-tooltip>
       </v-toolbar>
