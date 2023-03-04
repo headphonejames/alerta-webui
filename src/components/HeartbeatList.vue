@@ -30,8 +30,8 @@
               <v-icon v-bind="props">
                 access_time
               </v-icon>
-              <span>{{ $t('Slow') }}</span>
             </template>
+            <span>{{ $t('Slow') }}</span>
           </v-tooltip>
         </v-btn>
         <v-btn

@@ -27,7 +27,6 @@
           <template #activator="{props}">
             <v-btn
               v-bind="props"
-              #activator
               icon
               @click="close"
             >
@@ -195,12 +194,14 @@
               max-width="290px"
               min-width="290px"
             >
-              <div #activator />
-              <v-date-picker
-                v-model="period.startDate"
-                no-title
-                @update:model-value="menu1 = false"
-              />
+              <template #activator="{props}">
+                <div v-bind="props" />
+                <v-date-picker
+                  v-model="period.startDate"
+                  no-title
+                  @update:model-value="menu1 = false"
+                />
+              </template>
             </v-menu>
           </v-col>
           <v-col
@@ -245,12 +246,14 @@
               max-width="290px"
               min-width="290px"
             >
-              <div #activator />
-              <v-date-picker
-                v-model="period.endDate"
-                no-title
-                @update:model-value="menu2 = false"
-              />
+              <template #activator="{props}">
+                <div v-bind="props" />
+                <v-date-picker
+                  v-model="period.endDate"
+                  no-title
+                  @update:model-value="menu2 = false"
+                />
+              </template>
             </v-menu>
           </v-col>
         </v-layout>

@@ -459,17 +459,19 @@
                 bottom
                 start
               >
-                <v-btn
-                  #activator
-                  variant="flat"
-                  icon
-                  small
-                  class="btn--plain pa-0 ma-0"
-                >
-                  <v-icon small>
-                    more_vert
-                  </v-icon>
-                </v-btn>
+                <template #activator="{props}">
+                  <v-btn
+                    v-bind="props"
+                    variant="flat"
+                    icon
+                    small
+                    class="btn--plain pa-0 ma-0"
+                  >
+                    <v-icon small>
+                      more_vert
+                    </v-icon>
+                  </v-btn>
+                </template>
 
                 <v-list
                   subheader

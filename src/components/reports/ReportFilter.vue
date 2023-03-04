@@ -230,7 +230,9 @@
               max-width="290px"
               min-width="290px"
             >
-              <div #activator />
+              <template #activator="{props}">
+                <div v-bind="props" />
+              </template>
               <v-date-picker
                 v-model="period.startDate"
                 no-title
@@ -280,7 +282,9 @@
               max-width="290px"
               min-width="290px"
             >
-              <div #activator />
+              <template #activator="{props}">
+                <div v-bind="props" />
+              </template>
               <v-date-picker
                 v-model="period.endDate"
                 no-title

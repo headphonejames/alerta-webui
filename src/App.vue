@@ -172,13 +172,15 @@
             <v-tooltip 
               location="bottom"
             >
-              <v-switch
-                #activator
-                :model-value="isWatch"
-                hide-details
-                open-delay="3000"
-                @change="toggle('isWatch', $event)"
-              />
+              <template #activator="{props}">
+                <v-switch
+                  v-bind="props"
+                  :model-value="isWatch"
+                  hide-details
+                  open-delay="3000"
+                  @change="toggle('isWatch', $event)"
+                />
+              </template>
               <span>{{ $t('Watch') }}</span>
             </v-tooltip>
           </div>
@@ -188,29 +190,33 @@
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              #activator
-              icon
-              @click="toggleFullScreen"
-            >
-              <v-icon>{{ isFullscreen() ? 'fullscreen_exit' : 'fullscreen' }}</v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
+                v-bind="props"
+                icon
+                @click="toggleFullScreen"
+              >
+                <v-icon>{{ isFullscreen() ? 'fullscreen_exit' : 'fullscreen' }}</v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('FullScreen') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              #activator
-              icon
-            >
-              <v-icon @click="refresh">
-                refresh
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
+                v-bind="props"
+                icon
+              >
+                <v-icon @click="refresh">
+                  refresh
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Refresh') }}</span>
           </v-tooltip>
           <div>
@@ -221,10 +227,9 @@
               :nudge-width="200"
               offset-x
             >
-              <template #activator="{ props }">
+              <template #activator="{props}">
                 <v-btn
                   v-bind="props"
-                  #activator
                   icon
                 >
                   <v-avatar
@@ -242,13 +247,13 @@
                     </v-icon>
                   </v-avatar>
                 </v-btn>
+              
+                <profile-me
+                  v-if="profile"
+                  :profile="profile"
+                  @close="menu = false"
+                />
               </template>
-
-              <profile-me
-                v-if="profile"
-                :profile="profile"
-                @close="menu = false"
-              />
             </v-menu>
           </div>
 
@@ -300,95 +305,107 @@
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="toggleWatch()"
-            >
-              <v-icon>
-                visibility
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="toggleWatch()"
+              >
+                <v-icon>
+                  visibility
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Watch') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="bulkAckAlert()"
-            >
-              <v-icon>
-                check
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="bulkAckAlert()"
+              >
+                <v-icon>
+                  check
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Ack') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="showAddNoteForm = !showAddNoteForm"
-            >
-              <v-icon>
-                notes
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="showAddNoteForm = !showAddNoteForm"
+              >
+                <v-icon>
+                  notes
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Notes') }}</span>
           </v-tooltip>
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="bulkShelveAlert()"
-            >
-              <v-icon>
-                schedule
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="bulkShelveAlert()"
+              >
+                <v-icon>
+                  schedule
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Shelve') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="takeBulkAction('close')"
-            >
-              <v-icon>
-                highlight_off
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="takeBulkAction('close')"
+              >
+                <v-icon>
+                  highlight_off
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Close') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              #activator
-              icon
-              class="btn--plain"
-              @click="bulkDeleteAlert()"
-            >
-              <v-icon>
-                delete
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain"
+                @click="bulkDeleteAlert()"
+              >
+                <v-icon>
+                  delete
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Delete') }}</span>
           </v-tooltip>
 
@@ -396,10 +413,9 @@
             location="bottom"
             start
           >
-            <template #activator="{ props }">
+            <template #activator="{props}">
               <v-btn
                 v-bind="props"
-                #activator
                 variant="flat"
                 icon
                 size="small"
@@ -411,21 +427,21 @@
                   more_vert
                 </v-icon>
               </v-btn>
-            </template>
 
-            <v-list
-              subheader
-            >
-              <v-list-subheader>Actions</v-list-subheader>
-              <v-divider />
-              <v-list-item
-                v-for="(action, i) in actions"
-                :key="i"
-                @click="takeBulkAction(action)"
+              <v-list
+                subheader
               >
-                <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
+                <v-list-subheader>Actions</v-list-subheader>
+                <v-divider />
+                <v-list-item
+                  v-for="(action, i) in actions"
+                  :key="i"
+                  @click="takeBulkAction(action)"
+                >
+                  <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </template>
           </v-menu>
 
           <v-spacer />
@@ -433,29 +449,33 @@
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              #activator
-              icon
-              @click="toggleFullScreen"
-            >
-              <v-icon>{{ isFullscreen() ? 'fullscreen_exit' : 'fullscreen' }}</v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
+                v-bind="props"
+                icon
+                @click="toggleFullScreen"
+              >
+                <v-icon>{{ isFullscreen() ? 'fullscreen_exit' : 'fullscreen' }}</v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('FullScreen') }}</span>
           </v-tooltip>
 
           <v-tooltip 
             location="bottom"
           >
-            <v-btn
-              v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
-              #activator
-              icon
-            >
-              <v-icon @click="refresh">
-                refresh
-              </v-icon>
-            </v-btn>
+            <template #activator="{props}">
+              <v-btn
+                v-show="isLoggedIn || !isAuthRequired || isAllowReadonly"
+                v-bind="props"
+                icon
+              >
+                <v-icon @click="refresh">
+                  refresh
+                </v-icon>
+              </v-btn>
+            </template>
             <span>{{ $t('Refresh') }}</span>
           </v-tooltip>
 
@@ -466,10 +486,9 @@
             :nudge-width="200"
             offset-x
           >
-            <template #activator="{ props }">
+            <template #activator="{props}">
               <v-btn
                 v-bind="props"
-                #activator
                 icon
               >
                 <v-avatar
@@ -486,13 +505,13 @@
                     {{ navbar.signin.icon }}
                   </v-icon>
                 </v-avatar>
-              </v-btn>
+              </v-btn>  
+              <profile-me
+                v-if="profile"
+                :profile="profile"
+                @close="menu = false"
+              />
             </template>
-            <profile-me
-              v-if="profile"
-              :profile="profile"
-              @close="menu = false"
-            />
           </v-menu>
 
           <span class="hidden-xs-only">
