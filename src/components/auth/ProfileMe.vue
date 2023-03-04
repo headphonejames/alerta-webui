@@ -24,8 +24,8 @@
                   provider[profile.provider].icon
                 }}
               </v-icon>
-              <span>{{ provider[profile.provider].text }}</span>
             </template>
+            <span>{{ provider[profile.provider].text }}</span>
           </v-tooltip>
           <v-tooltip
             v-else-if="profile.email_verified"
@@ -35,8 +35,8 @@
               <v-icon v-bind="props">
                 verified_user
               </v-icon>
-              <span>({{ $t('EmailVerified') }})</span>
             </template>
+            <span>({{ $t('EmailVerified') }})</span>
           </v-tooltip>
           <v-tooltip
             v-else
@@ -46,8 +46,8 @@
               <v-icon v-bind="props">
                 fas fa-user-times
               </v-icon>
-              <span>{{ $t('EmailNotVerified') }}</span>
             </template>
+            <span>{{ $t('EmailNotVerified') }}</span>
           </v-tooltip>
         </v-list-item-action>
       </v-list-item>

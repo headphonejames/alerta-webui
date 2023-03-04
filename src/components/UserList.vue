@@ -240,8 +240,8 @@
                 <v-icon v-bind="props">
                   check_circle
                 </v-icon>
-                <span>{{ $t('Active') }}</span>
               </template>
+              <span>{{ $t('Active') }}</span>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -253,8 +253,8 @@
                 <v-icon v-bind="props">
                   block
                 </v-icon>
-                <span>{{ $t('Inactive') }}</span>
               </template>
+              <span>{{ $t('Inactive') }}</span>
             </v-tooltip>
           </v-btn>
         </v-btn-toggle>
@@ -322,8 +322,8 @@
                     props.item.status === 'active' ? 'toggle_on' : 'toggle_off'
                   }}
                 </v-icon>
-                <span>{{ $filters.capitalize(props.item.status) }}</span>
               </template>
+              <span>{{ $filters.capitalize(props.item.status) }}</span>
             </v-tooltip>
           </td>
           <td>{{ props.item.login }}</td>
@@ -341,14 +341,14 @@
                       : 'check_box_outline_blank'
                   }}
                 </v-icon>
-                <span>
-                  {{
-                    props.item.email_verified
-                      ? $t('EmailVerified')
-                      : $t('EmailNotVerified')
-                  }}
-                </span>
               </template>
+              <span>
+                {{
+                  props.item.email_verified
+                    ? $t('EmailVerified')
+                    : $t('EmailNotVerified')
+                }}
+              </span>
             </v-tooltip>
           </td>
           <td>

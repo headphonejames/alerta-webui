@@ -60,12 +60,12 @@
                         :label="$t('StartDate')"
                         prepend-icon="event"
                       />
-                      <v-date-picker
-                        v-model="editedItem.period.startDate"
-                        no-title
-                        @update:model-value="menu1 = false"
-                      />
                     </template>
+                    <v-date-picker
+                      v-model="editedItem.period.startDate"
+                      no-title
+                      @update:model-value="menu1 = false"
+                    />
                   </v-menu>
                 </v-col>
 
@@ -106,12 +106,12 @@
                         v-model="editedItem.period.endDate"
                         :label="$t('EndDate')"
                       />
-                      <v-date-picker
-                        v-model="editedItem.period.endDate"
-                        no-title
-                        @update:model-value="menu2 = false"
-                      />
                     </template>
+                    <v-date-picker
+                      v-model="editedItem.period.endDate"
+                      no-title
+                      @update:model-value="menu2 = false"
+                    />
                   </v-menu>
                 </v-col>
 
@@ -242,8 +242,8 @@
                 <v-icon v-bind="props">
                   notifications_paused
                 </v-icon>
-                <span>{{ $t('Active') }}</span>
               </template>
+              <span>{{ $t('Active') }}</span>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -255,8 +255,8 @@
                 <v-icon v-bind="props">
                   schedule
                 </v-icon>
-                <span>{{ $t('Pending') }}</span>
               </template>
+              <span>{{ $t('Pending') }}</span>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -269,8 +269,8 @@
                   v-bind="props">
                   block
                 </v-icon>
-                <span>{{ $t('Expired') }}</span>
               </template>
+              <span>{{ $t('Expired') }}</span>
             </v-tooltip>
           </v-btn>
         </v-btn-toggle>

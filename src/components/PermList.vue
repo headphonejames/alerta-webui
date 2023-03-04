@@ -153,8 +153,8 @@
                 >
                   lock
                 </v-icon>
-                <span>{{ $t('SystemRole') }}</span>
               </template>
+              <span>{{ $t('SystemRole') }}</span>
             </v-tooltip>
           </td>
           <td>

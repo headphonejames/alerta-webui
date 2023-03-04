@@ -7,8 +7,8 @@
       >
         {{ $filters.date(value, displayMode, formatString) }}
       </span>
-      <span>{{ $filters.date(value, 'utc', 'YYYY/MM/DD HH:mm:ss.SSS Z') }}</span>
     </template>
+    <span>{{ $filters.date(value, 'utc', 'YYYY/MM/DD HH:mm:ss.SSS Z') }}</span>
   </v-tooltip>
 </template>
 

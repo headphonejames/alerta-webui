@@ -58,8 +58,8 @@
             >
               content_copy
             </v-icon>
-            <span>{{ copyIconText }}</span>
           </template>
+          <span>{{ copyIconText }}</span>
         </v-tooltip>
       </td>
     </template>

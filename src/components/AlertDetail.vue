@@ -18,8 +18,9 @@
         </v-btn>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               :disabled="!isAcked(item.status) && !isClosed(item.status)"
               icon
               class="btn--plain px-1 mx-0"
@@ -31,13 +32,14 @@
                 refresh
               </v-icon>
             </v-btn>
-            <span>{{ $t('Open') }}</span>
           </template>
+          <span>{{ $t('Open') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="!isWatched(item.tags)"
               icon
               class="btn--plain px-1 mx-0"
@@ -49,13 +51,14 @@
                 visibility
               </v-icon>
             </v-btn>
-            <span>{{ $t('Watch') }}</span>
           </template>
+          <span>{{ $t('Watch') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="isWatched(item.tags)"
               icon
               class="btn--plain px-1 mx-0"
@@ -67,13 +70,15 @@
                 visibility_off
               </v-icon>
             </v-btn>
-            <span>{{ $t('Unwatch') }}</span>
           </template>
+          <span>{{ $t('Unwatch') }}</span>
+          
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="!isAcked(item.status)"
               :disabled="!isOpen(item.status)"
               icon
@@ -86,13 +91,14 @@
                 check
               </v-icon>
             </v-btn>
-            <span>{{ $t('Ack') }}</span>
           </template>
+          <span>{{ $t('Ack') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="isAcked(item.status)"
               icon
               class="btn--plain px-1 mx-0"
@@ -104,13 +110,14 @@
                 undo
               </v-icon>
             </v-btn>
-            <span>{{ $t('Unack') }}</span>
           </template>
+          <span>{{ $t('Unack') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="!isShelved(item.status)"
               :disabled="!isOpen(item.status) && !isAcked(item.status)"
               icon
@@ -123,13 +130,14 @@
                 schedule
               </v-icon>
             </v-btn>
-            <span>{{ $t('Shelve') }}</span>
           </template>
+          <span>{{ $t('Shelve') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               v-show="isShelved(item.status)"
               icon
               class="btn--plain px-1 mx-0"
@@ -141,13 +149,14 @@
                 restore
               </v-icon>
             </v-btn>
-            <span>{{ $t('Unshelve') }}</span>
           </template>
+          <span>{{ $t('Unshelve') }}</span>   
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               :disabled="isClosed(item.status)"
               icon
               class="btn--plain px-1 mx-0"
@@ -159,13 +168,14 @@
                 highlight_off
               </v-icon>
             </v-btn>
-            <span>{{ $t('Close') }}</span>
           </template>
+          <span>{{ $t('Close') }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               icon
               class="btn--plain px-1 mx-0"
               @click="deleteAlert(item.id)"
@@ -176,16 +186,17 @@
                 delete
               </v-icon>
             </v-btn>
-            <span>{{ $t('Delete') }}</span>
           </template>
+          <span>{{ $t('Delete') }}</span>
         </v-tooltip>
 
         <v-tooltip
           :key="copyIconText"
           bottom
         >
-          <template #activator>
+          <template #activator="{props}">
             <v-btn
+              v-bind="props"
               icon
               class="btn--plain px-1 mx-0"
               @click="clipboardCopy(JSON.stringify(item, null, 4))"
@@ -196,12 +207,12 @@
                 content_copy
               </v-icon>
             </v-btn>
-            <span>{{ copyIconText }}</span>
           </template>
+          <span>{{ copyIconText }}</span>
         </v-tooltip>
 
         <v-tooltip bottom>
-          <template #activator>
+          <template #activator="{props}">
             <v-menu
               bottom
               start
@@ -232,7 +243,6 @@
               </v-list>
             </v-menu>
           </template>
-
           <span>{{ $t('More') }}</span>
         </v-tooltip>
       </v-toolbar>

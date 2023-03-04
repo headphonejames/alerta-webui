@@ -96,7 +96,7 @@
         bottom
         start
       >
-        <template #activator="{ props }">
+        <template #activator="{props}">
           <v-btn
             v-bind="props"
             variant="flat"

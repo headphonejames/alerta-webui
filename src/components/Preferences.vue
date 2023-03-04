@@ -383,7 +383,7 @@ export default {
       }
     },
     computedDateFormats() {
-      moment.locale(i18n.global.locale)
+      moment.locale(i18n.global.locale.value)
       let allDateFormats = [...new Set([
         this.$store.getters.getConfig('dates').mediumDate,
         ...this.mediumDateFormats,
@@ -393,7 +393,7 @@ export default {
       return allDateFormats.map(f => ({text: moment().format(f), value: f}))
     },
     computedTimeFormats() {
-      moment.locale(i18n.global.locale)
+      moment.locale(i18n.global.locale.value)
       let allTimeFormats = [...new Set([
         this.$store.getters.getConfig('dates').shortTime,
         ...this.timeFormats,

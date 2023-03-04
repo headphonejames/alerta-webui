@@ -17,8 +17,8 @@
               <v-icon v-bind="props">
                 check_circle
               </v-icon>
-              <span>{{ $t('OK') }}</span>
             </template>
+            <span>{{ $t('OK') }}</span>
           </v-tooltip>
         </v-btn>
         <v-btn
@@ -43,8 +43,8 @@
               <v-icon v-bind="props">
                 timer_off
               </v-icon>
-              <span>{{ $t('Expired') }}</span>
             </template>
+            <span>{{ $t('Expired') }}</span>
           </v-tooltip>
         </v-btn>
       </v-btn-toggle>

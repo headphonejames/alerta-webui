@@ -196,12 +196,12 @@
             >
               <template #activator="{props}">
                 <div v-bind="props" />
-                <v-date-picker
-                  v-model="period.startDate"
-                  no-title
-                  @update:model-value="menu1 = false"
-                />
               </template>
+              <v-date-picker
+                v-model="period.startDate"
+                no-title
+                @update:model-value="menu1 = false"
+              />
             </v-menu>
           </v-col>
           <v-col
@@ -248,12 +248,12 @@
             >
               <template #activator="{props}">
                 <div v-bind="props" />
-                <v-date-picker
-                  v-model="period.endDate"
-                  no-title
-                  @update:model-value="menu2 = false"
-                />
               </template>
+              <v-date-picker
+                v-model="period.endDate"
+                no-title
+                @update:model-value="menu2 = false"
+              />
             </v-menu>
           </v-col>
         </v-layout>

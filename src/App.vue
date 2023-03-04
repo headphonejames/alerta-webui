@@ -247,13 +247,12 @@
                     </v-icon>
                   </v-avatar>
                 </v-btn>
-              
-                <profile-me
-                  v-if="profile"
-                  :profile="profile"
-                  @close="menu = false"
-                />
               </template>
+              <profile-me
+                v-if="profile"
+                :profile="profile"
+                @close="menu = false"
+              />
             </v-menu>
           </div>
 
@@ -427,21 +426,20 @@
                   more_vert
                 </v-icon>
               </v-btn>
-
-              <v-list
-                subheader
-              >
-                <v-list-subheader>Actions</v-list-subheader>
-                <v-divider />
-                <v-list-item
-                  v-for="(action, i) in actions"
-                  :key="i"
-                  @click="takeBulkAction(action)"
-                >
-                  <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
             </template>
+            <v-list
+              subheader
+            >
+              <v-list-subheader>Actions</v-list-subheader>
+              <v-divider />
+              <v-list-item
+                v-for="(action, i) in actions"
+                :key="i"
+                @click="takeBulkAction(action)"
+              >
+                <v-list-item-title>{{ $filters.splitCaps(action) }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
           </v-menu>
 
           <v-spacer />
@@ -506,12 +504,12 @@
                   </v-icon>
                 </v-avatar>
               </v-btn>  
-              <profile-me
-                v-if="profile"
-                :profile="profile"
-                @close="menu = false"
-              />
             </template>
+            <profile-me
+              v-if="profile"
+              :profile="profile"
+              @close="menu = false"
+            />
           </v-menu>
 
           <span class="hidden-xs-only">
