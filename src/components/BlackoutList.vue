@@ -251,7 +251,7 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <template #activator="{slots}">
+              <template #activator="{props}">
                 <v-icon v-bind="props">
                   schedule
                 </v-icon>
@@ -264,10 +264,13 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon #activator>
-                block
-              </v-icon>
-              <span>{{ $t('Expired') }}</span>
+              <template #activator="{props}">
+                <v-icon
+                  v-bind="props">
+                  block
+                </v-icon>
+                <span>{{ $t('Expired') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
         </v-btn-toggle>
@@ -355,32 +358,34 @@
           <td>{{ props.item.origin }}</td>
           <td class="text-xs-right">
             <v-tooltip top>
-              {{ $filters.capitalize(props.item.status) }}
-              <v-icon
-                v-if="props.item.status == 'pending'"
-                #activator
-                light
-                small
-              >
-                schedule
-              </v-icon>
+              <template #activator="{props}">
+                {{ $filters.capitalize(props.item.status) }}
+                <v-icon
+                  v-if="props.item.status == 'pending'"
+                  v-bind="props"
+                  light
+                  small
+                >
+                  schedule
+                </v-icon>
 
-              <v-icon
-                v-if="props.item.status == 'active'"
-                #activator
-                color="primary"
-                small
-              >
-                notifications_paused
-              </v-icon>
+                <v-icon
+                  v-if="props.item.status == 'active'"
+                  v-bind="props"
+                  color="primary"
+                  small
+                >
+                  notifications_paused
+                </v-icon>
 
-              <v-icon
-                v-if="props.item.status == 'expired'"
-                #activator
-                small
-              >
-                block
-              </v-icon>
+                <v-icon
+                  v-if="props.item.status == 'expired'"
+                  v-bind="props"
+                  small
+                >
+                  block
+                </v-icon>
+              </template>
             </v-tooltip>
           </td>
           <td class="text-xs-left">
@@ -457,14 +462,16 @@
             {{ $t('NoDisplay') }}
           </v-alert>
         </template>
-        <v-alert
-          #no-results
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
-        </v-alert>
+        
+        <template #no-results>
+          <v-alert
+            :value="true"
+            color="error"
+            icon="warning"
+          >
+            {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
+          </v-alert>
+        </template>
       </v-data-table>
     </v-card>
 
