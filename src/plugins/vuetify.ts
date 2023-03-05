@@ -2,7 +2,9 @@ import {createVuetify} from 'vuetify'
 import {md} from 'vuetify/iconsets/md'
 import 'vuetify/lib/styles/main.sass'
 import 'vuetify/styles'
-import * as components from 'vuetify/components'
+import * as comps from 'vuetify/components'
+//WARNING: This will not be supported in the future
+import {VDataTable} from 'vuetify/labs/VDataTable'
 import * as directives from 'vuetify/directives'
 //This will make the final bundle bigger because
 //of possibly unused components
@@ -15,8 +17,11 @@ const customTheme = {
 }
 
 const vuetify = createVuetify({
-  components,
   directives,
+  components: {
+    ...comps,
+    VDataTable
+  },
   theme: {
     themes: {
       customTheme

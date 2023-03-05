@@ -1,12 +1,11 @@
 <template>
   <v-navigation-drawer
     :value="sidesheet"
-    clipped
     disable-resize-watcher
-    position="absolute"
+    absolute
     hide-overlay
     width="300"
-    end
+    location="end"
   >
     <v-card tile>
       <v-toolbar

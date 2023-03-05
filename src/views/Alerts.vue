@@ -161,6 +161,7 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import AlertList from '@/components/AlertList.vue'
 
 import moment from 'moment'
@@ -171,8 +172,8 @@ import i18n from '@/plugins/i18n'
 export default {
   components: {
     AlertList,
-    AlertIndicator: () => import('@/components/AlertIndicator.vue'),
-    AlertListFilter: () => import('@/components/AlertListFilter.vue')
+    AlertIndicator: defineAsyncComponent(() => import('@/components/AlertIndicator.vue')) ,
+    AlertListFilter: defineAsyncComponent(() => import('@/components/AlertListFilter.vue'))
   },
   props: {
     query: {

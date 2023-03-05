@@ -561,6 +561,8 @@
 
       <v-main>
         <banner />
+        <!--This may need to be changed
+        https://router.vuejs.org/guide/migration/#router-view-keep-alive-and-transition-->
         <router-view />
         <snackbar />
       </v-main>
