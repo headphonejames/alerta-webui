@@ -22,16 +22,17 @@
                     :key="copyIconText"
                     end
                   >
-                    <v-text-field
-                      v-if="editedItem.key"
-                      #activator
-                      v-model="editedItem.key"
-                      :label="$t('APIKey')"
-                      readonly
-                      monospace
-                      append-icon="content_copy"
-                      @click:append="clipboardCopy(editedItem.key)"
-                    />
+                    <template #activator>
+                      <v-text-field
+                        v-if="editedItem.key"
+                        v-model="editedItem.key"
+                        :label="$t('APIKey')"
+                        readonly
+                        monospace
+                        append-icon="content_copy"
+                        @click:append="clipboardCopy(editedItem.key)"
+                      />
+                    </template>
                     <span>{{ copyIconText }}</span>
                   </v-tooltip>
                 </v-col>
@@ -103,13 +104,15 @@
                     full-width
                     min-width="290px"
                   >
-                    <v-text-field
-                      #activator
-                      v-model="pickerDate"
-                      :label="$t('Expires')"
-                      prepend-icon="event"
-                      readonly
-                    />
+                    <template #activator>
+                      <v-text-field
+                        v-model="pickerDate"
+                        :label="$t('Expires')"
+                        prepend-icon="event"
+                        readonly
+                      />
+                    </template>
+
                     <v-date-picker
                       v-model="pickerDate"
                       :min="new Date().toISOString().slice(0, 10)"
@@ -164,10 +167,12 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon #activator>
-                check_circle
-              </v-icon>
-              <span>{{ $t('Active') }}</span>
+              <template #activator>
+                <v-icon>
+                  check_circle
+                </v-icon>
+                <span>{{ $t('Active') }}</span>
+              </template>
             </v-tooltip>
           </v-btn>
           <v-btn
@@ -175,9 +180,11 @@
             variant="flat"
           >
             <v-tooltip bottom>
-              <v-icon #activator>
-                error_outline
-              </v-icon>
+              <template #activator>
+                <v-icon>
+                  error_outline
+                </v-icon>
+              </template>
               <span>{{ $t('Expired') }}</span>
             </v-tooltip>
           </v-btn>
@@ -215,14 +222,15 @@
               :key="copyIconText"
               top
             >
-              <v-icon
-                #activator
-                :value="props.item.key"
-                style="font-size: 16px;"
-                @click="clipboardCopy(props.item.key)"
-              >
-                content_copy
-              </v-icon>
+              <template #activator>
+                <v-icon
+                  :value="props.item.key"
+                  style="font-size: 16px;"
+                  @click="clipboardCopy(props.item.key)"
+                >
+                  content_copy
+                </v-icon>
+              </template>
               <span>{{ copyIconText }}</span>
             </v-tooltip>
           </td>
@@ -231,26 +239,29 @@
               v-if="!isExpired(props.item.expireTime)"
               top
             >
-              <v-icon
-                #activator
-                color="primary"
-                small
-              >
-                check_circle
-              </v-icon>
+              <template #activator>
+                <v-icon
+                  color="primary"
+                  small
+                >
+                  check_circle
+                </v-icon>
+              </template>
+
               <span>{{ $t('Active') }}</span>
             </v-tooltip>
             <v-tooltip
               v-if="isExpired(props.item.expireTime)"
               top
             >
-              <v-icon
-                #activator
-                color="error"
-                small
-              >
-                error_outline
-              </v-icon>
+              <template #activator>
+                <v-icon
+                  color="error"
+                  small
+                >
+                  error_outline
+                </v-icon>
+              </template>
               <span>{{ $t('Expired') }}</span>
             </v-tooltip>
           </td>
@@ -335,14 +346,16 @@
             {{ $t('NoDisplay') }}
           </v-alert>
         </template>
-        <v-alert
-          #no-results
-          :value="true"
-          color="error"
-          icon="warning"
-        >
-          {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
-        </v-alert>
+        <template #no-results>
+          <v-alert
+            :value="true"
+            color="error"
+            icon="warning"
+          >
+            {{ $t('SearchNoResult1') }} "{{ search }}" {{ $t('SearchNoResult2') }}
+          </v-alert>
+        </template>
+
       </v-data-table>
     </v-card>
 
