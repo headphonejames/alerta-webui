@@ -27,6 +27,7 @@
     "vue-authenticate": "github:alerta/vue-authenticate",
     "vue-axios": "^3.5.2",
     "vue-i18n": "^9.2.2",
+    "vue-object-merge": "^1.0.0",
     "vue-router": "^4.1.6",
     "vuetify": "^3.1.5",
     "vuex": "^4.1.0",

@@ -217,16 +217,15 @@
               bottom
               start
             >
-              <template #activator>
-                <v-btn
-                  icon
-                  class="btn--plain px-1 mx-0"
-                >
-                  <v-icon>
-                    more_vert
-                  </v-icon>
-                </v-btn>
-              </template>
+              <v-btn
+                v-bind="props"
+                icon
+                class="btn--plain px-1 mx-0"
+              >
+                <v-icon>
+                  more_vert
+                </v-icon>
+              </v-btn>
 
               <v-list
                 subheader

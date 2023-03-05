@@ -1,3 +1,5 @@
+import stateMerge from 'vue-object-merge'
+
 const state = {
   endpoint: 'http://local.alerta.io:8080',
   alarm_model: {}, // includes severity, colors and status maps
@@ -56,7 +58,9 @@ const state = {
 
 const mutations = {
   SET_CONFIG(state, config) {
-    state.config = config
+    //TODO: Without this function the state is incorrect, but it doesn't work in Vue 3
+    //It was in the vue-object-merge package
+    stateMerge(state,config)
   }
 }
 

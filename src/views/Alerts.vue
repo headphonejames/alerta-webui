@@ -93,8 +93,7 @@
       </v-btn>
 
       <v-menu
-        bottom
-        start
+        location="left bottom"
       >
         <template #activator="{props}">
           <v-btn

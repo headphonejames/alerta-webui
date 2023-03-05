@@ -224,8 +224,7 @@
               v-if="isLoggedIn"
               v-model="menu"
               :close-on-content-click="false"
-              :nudge-width="200"
-              offset-x
+              offset="20"
             >
               <template #activator="{props}">
                 <v-btn
@@ -409,8 +408,7 @@
           </v-tooltip>
 
           <v-menu
-            location="bottom"
-            start
+            location="left bottom"
           >
             <template #activator="{props}">
               <v-btn
