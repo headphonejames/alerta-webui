@@ -17,7 +17,7 @@
           <v-icon>arrow_back</v-icon>
         </v-btn>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -27,6 +27,7 @@
               @click="takeAction(item.id, 'open')"
             >
               <v-icon
+                v-bind="props"
                 size="20px"
               >
                 refresh
@@ -36,7 +37,7 @@
           <span>{{ $t('Open') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -47,6 +48,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 visibility
               </v-icon>
@@ -55,7 +57,7 @@
           <span>{{ $t('Watch') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -66,6 +68,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 visibility_off
               </v-icon>
@@ -75,7 +78,7 @@
           
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -87,6 +90,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 check
               </v-icon>
@@ -95,7 +99,7 @@
           <span>{{ $t('Ack') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -106,6 +110,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 undo
               </v-icon>
@@ -114,7 +119,7 @@
           <span>{{ $t('Unack') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -126,6 +131,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 schedule
               </v-icon>
@@ -134,7 +140,7 @@
           <span>{{ $t('Shelve') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -144,6 +150,7 @@
               @click="takeAction(item.id, 'unshelve')"
             >
               <v-icon
+                v-bind="props"
                 size="20px"
               >
                 restore
@@ -153,7 +160,7 @@
           <span>{{ $t('Unshelve') }}</span>   
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -164,6 +171,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 highlight_off
               </v-icon>
@@ -172,7 +180,7 @@
           <span>{{ $t('Close') }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-btn
               v-bind="props"
@@ -182,6 +190,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 delete
               </v-icon>
@@ -192,7 +201,7 @@
 
         <v-tooltip
           :key="copyIconText"
-          bottom
+          location="bottom"
         >
           <template #activator="{props}">
             <v-btn
@@ -203,6 +212,7 @@
             >
               <v-icon
                 size="20px"
+                v-bind="props"
               >
                 content_copy
               </v-icon>
@@ -211,10 +221,10 @@
           <span>{{ copyIconText }}</span>
         </v-tooltip>
 
-        <v-tooltip bottom>
+        <v-tooltip location="bottom">
           <template #activator="{props}">
             <v-menu
-              bottom
+              location="bottom"
               start
             >
               <v-btn
@@ -222,7 +232,7 @@
                 icon
                 class="btn--plain px-1 mx-0"
               >
-                <v-icon>
+                <v-icon v-bind="props">
                   more_vert
                 </v-icon>
               </v-btn>
@@ -810,7 +820,7 @@
                   sort-icon="arrow_drop_down"
                 >
                   <template
-                    #items="props"
+                    #items="{props}"
                   >
                     <td class="hidden-sm-and-down">
                       <span class="console-text">{{ $filters.shortId(props.item.id) }}</span>
