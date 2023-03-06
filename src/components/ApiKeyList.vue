@@ -179,9 +179,9 @@
             value="expired"
             variant="flat"
           >
-            <v-tooltip bottom>
-              <template #activator>
-                <v-icon>
+            <v-tooltip location="bottom">
+              <template #activator="{props}">
+                <v-icon v-bind="props">
                   error_outline
                 </v-icon>
               </template>
@@ -222,8 +222,9 @@
               :key="copyIconText"
               top
             >
-              <template #activator>
+              <template #activator="{props}">
                 <v-icon
+                  v-bind="props"
                   :value="props.item.key"
                   style="font-size: 16px;"
                   @click="clipboardCopy(props.item.key)"
@@ -239,8 +240,9 @@
               v-if="!isExpired(props.item.expireTime)"
               top
             >
-              <template #activator>
+              <template #activator="{props}">
                 <v-icon
+                  v-bind="props"
                   color="primary"
                   small
                 >
@@ -254,8 +256,9 @@
               v-if="isExpired(props.item.expireTime)"
               top
             >
-              <template #activator>
+              <template #activator="{props}">
                 <v-icon
+                  v-bind="props"
                   color="error"
                   small
                 >
