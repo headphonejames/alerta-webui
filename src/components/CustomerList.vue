@@ -14,9 +14,9 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.match"
@@ -27,7 +27,7 @@
                     required
                   />
                   <v-col
-                    xs12
+                    xs="12"
                   >
                     <v-chip
                       v-show="editedItem.customer"
@@ -45,7 +45,7 @@
                     required
                   />
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 

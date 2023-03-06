@@ -5,7 +5,7 @@
       class="pa-1"
       fluid
     >
-      <v-layout>
+      <v-row>
         <v-col>
           <v-btn
             v-show="!isWatched"
@@ -42,7 +42,7 @@
             <v-icon>delete_forever</v-icon>&nbsp;{{ $t('Delete') }}
           </v-btn>
         </v-col>
-      </v-layout>
+      </v-row>
     </v-container>
 
 
@@ -51,7 +51,7 @@
       class="pa-1"
       fluid
     >
-      <v-layout>
+      <v-row>
         <v-col>
           <v-form
             ref="form"
@@ -153,7 +153,7 @@
             </v-card>
           </v-form>
         </v-col>
-      </v-layout>
+      </v-row>
     </v-container>
   </div>
 </template>

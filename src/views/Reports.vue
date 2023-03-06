@@ -5,7 +5,7 @@
         {{ $t('Reports') }}
         <v-spacer />
         <v-col
-          xs1
+          xs="1"
         >
           <v-select
             v-model.number="rowsPerPage"

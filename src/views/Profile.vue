@@ -13,7 +13,7 @@
             </span>
           </v-card-title>
 
-          <v-layout
+          <v-row
             row
             wrap
           >
@@ -41,8 +41,8 @@
                 </v-icon>
               </v-avatar>
             </v-col>
-          </v-layout>
-          <v-layout
+          </v-row>
+          <v-row
             row
             spacer
           >
@@ -54,8 +54,8 @@
             >
               <b>{{ profile.name }}</b>
             </v-col>
-          </v-layout>
-          <v-layout
+          </v-row>
+          <v-row
             row
             spacer
           >
@@ -70,13 +70,13 @@
               >@</span>
               {{ profile.preferred_username }}
             </v-col>
-          </v-layout>
+          </v-row>
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model="profile.name"
@@ -85,7 +85,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs9
+                  xs="9"
                 >
                   <v-text-field
                     v-model="profile.preferred_username"
@@ -96,7 +96,7 @@
 
                 <v-col
                   v-if="provider[profile.provider]"
-                  xs3
+                  xs="3"
                 >
                   <v-text-field
                     v-model="provider[profile.provider].text"
@@ -106,7 +106,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model="profile.sub"
@@ -116,7 +116,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-if="profile.oid"
@@ -127,7 +127,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model="profile.email"
@@ -161,7 +161,7 @@
 
                 <v-col
                   v-if="$config.customer_views"
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="customers"
@@ -179,7 +179,7 @@
                   </v-combobox>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="profile.orgs"
@@ -197,7 +197,7 @@
                   </v-combobox>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="profile.groups"
@@ -215,7 +215,7 @@
                   </v-combobox>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="profile.roles"
@@ -233,7 +233,7 @@
                   </v-combobox>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="scopes"
@@ -250,7 +250,7 @@
                     </template>
                   </v-combobox>
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 

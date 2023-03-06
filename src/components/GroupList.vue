@@ -14,9 +14,9 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs9
+                  xs="9"
                 >
                   <v-autocomplete
                     v-model="selected"
@@ -54,7 +54,7 @@
                     </template>
                   </v-autocomplete>
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 
@@ -116,11 +116,11 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-chip
                     v-show="editedItem.name"
@@ -138,14 +138,14 @@
                   required
                 />
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.text"
                     :label="$t('Description')"
                   />
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 

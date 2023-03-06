@@ -3,15 +3,15 @@
     grid-list-sm
     fill-height
   >
-    <v-layout
+    <v-row
       align-center
       row
       wrap
     >
       <v-col
         v-if="isBasicAuth"
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -65,8 +65,8 @@
 
       <v-col
         v-else-if="$config.provider == 'saml2'"
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -101,8 +101,8 @@
 
       <v-col
         v-else
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -128,12 +128,12 @@
       </v-col>
 
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       />
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 

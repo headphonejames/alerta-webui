@@ -3,14 +3,14 @@
     grid-list-sm
     fill-height
   >
-    <v-layout
+    <v-row
       align-center
       row
       wrap
     >
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -19,12 +19,12 @@
         </p>
       </v-col>
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       />
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 

@@ -3,10 +3,10 @@
     :value="sidesheet"
     clipped
     disable-resize-watcher
-    position="absolute"
+    absolute
     hide-overlay
     width="300"
-    end
+    location="end"
   >
     <v-card tile>
       <v-toolbar
@@ -40,12 +40,12 @@
         fluid
         grid-list-xl
       >
-        <v-layout
+        <v-row
           align-center
           wrap
         >
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-text-field
@@ -61,7 +61,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-autocomplete
@@ -79,7 +79,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-select
@@ -97,7 +97,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-select
@@ -116,7 +116,7 @@
 
           <v-col
             v-if="$config.customer_views"
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-select
@@ -134,7 +134,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-autocomplete
@@ -152,7 +152,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <v-select
@@ -170,7 +170,7 @@
           </v-col>
 
           <v-col
-            xs12
+            xs="12"
             class="pb-0"
           >
             <span class="body-2">{{ $t('DateTime') }}</span>
@@ -189,7 +189,7 @@
 
           <v-col
             v-show="showDateRange"
-            xs8
+            xs="8"
             class="pb-0 pr-0"
           >
             <v-text-field
@@ -204,7 +204,7 @@
 
           <v-col
             v-show="showDateRange"
-            xs4
+            xs="4"
             class="pb-0 pl-1"
           >
             <v-text-field
@@ -242,7 +242,7 @@
           </v-col>
           <v-col
             v-show="showDateRange"
-            xs8
+            xs="8"
             class="pb-0 pr-0"
           >
             <v-text-field
@@ -257,7 +257,7 @@
 
           <v-col
             v-show="showDateRange"
-            xs4
+            xs="4"
             class="pb-0 pl-1"
           >
             <v-text-field
@@ -292,12 +292,12 @@
               />
             </v-menu>
           </v-col>
-        </v-layout>
+        </v-row>
       </v-container>
     </v-card>
     <v-card flat>
       <v-col
-        xs12
+        xs="12"
       >
         <v-card-actions>
           <v-btn

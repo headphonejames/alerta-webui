@@ -3,15 +3,15 @@
     grid-list-sm
     fill-height
   >
-    <v-layout
+    <v-row
       v-show="!sent"
       align-center
       row
       wrap
     >
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -51,22 +51,22 @@
         </div>
       </v-col>
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       />
-    </v-layout>
+    </v-row>
 
-    <v-layout
+    <v-row
       v-show="sent"
       align-center
       row
       wrap
     >
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       >
@@ -105,12 +105,12 @@
         </div>
       </v-col>
       <v-col
-        xs12
-        sm8
+        xs="12"
+        sm="8"
         offset-xs0
         offset-sm2
       />
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 

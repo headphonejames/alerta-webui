@@ -51,20 +51,20 @@
         v-if="showPanel"
         class="px-1"
       >
-        <v-layout wrap>
+        <v-row wrap>
           <v-col
             v-for="(indicator, index) in indicators"
             :key="index"
-            xs12
-            sm6
-            md3
+            xs="12"
+            sm="6"
+            md="3"
           >
             <alert-indicator
               :title="indicator.text"
               :query="indicator.query"
             />
           </v-col>
-        </v-layout>
+        </v-row>
         <v-divider />
       </div>
     </v-expand-transition>

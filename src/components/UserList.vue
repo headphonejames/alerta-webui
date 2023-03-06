@@ -2,7 +2,7 @@
   <div>
     <v-dialog
       v-model="dialog"
-      max-width="500px"
+      max-width="550px"
     >
       <v-form
         ref="form"
@@ -17,11 +17,11 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
-                  sm6
-                  md9
+                  xs="12"
+                  sm="6"
+                  md="9"
                 >
                   <v-text-field
                     v-model.trim="editedItem.name"
@@ -32,9 +32,9 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
-                  md3
+                  xs="12"
+                  sm="6"
+                  md="3"
                 >
                   <v-switch
                     v-model="editedItem.status"
@@ -44,9 +44,9 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
-                  md9
+                  xs="12"
+                  sm="6"
+                  md="9"
                 >
                   <v-text-field
                     v-model.trim="editedItem.login"
@@ -57,9 +57,9 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
-                  md9
+                  xs="12"
+                  sm="6"
+                  md="9"
                 >
                   <v-text-field
                     v-model.trim="editedItem.email"
@@ -70,9 +70,9 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
-                  md3
+                  xs="12"
+                  sm="6"
+                  md="3"
                 >
                   <v-checkbox
                     v-model="editedItem.email_verified"
@@ -81,8 +81,8 @@
                 </v-col>
 
                 <v-col
-                  xs12
-                  sm6
+                  xs="12"
+                  sm="6"
                 >
                   <v-text-field
                     v-show="isBasicAuth"
@@ -106,8 +106,8 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
+                  xs="12"
+                  sm="6"
                 >
                   <v-text-field
                     v-show="isBasicAuth"
@@ -131,9 +131,9 @@
                 </v-col>
 
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-select
                     v-model="userGroups"
@@ -146,9 +146,7 @@
                     multiple
                     :disabled="!editedId"
                   >
-                    <template
-                      #selection="data"
-                    >
+                    <template #selection="data">
                       <v-chip
                         :selected="data.selected"
                         close
@@ -161,9 +159,9 @@
                 </v-col>
 
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-autocomplete
                     v-model="editedItem.roles"
@@ -174,9 +172,7 @@
                     solo
                     multiple
                   >
-                    <template
-                      #selection="data"
-                    >
+                    <template #selection="data">
                       <v-chip
                         :selected="data.selected"
                         close
@@ -188,16 +184,16 @@
                   </v-autocomplete>
                 </v-col>
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.text"
                     :label="$t('Comment')"
                   />
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 
@@ -260,7 +256,7 @@
         </v-btn-toggle>
         <v-spacer />
         <v-col
-          xs3
+          xs="3"
           class="mr-3 pt-3"
         >
           <v-autocomplete
@@ -283,7 +279,7 @@
             </template>
           </v-autocomplete>
         </v-col>
-        <v-col xs6>
+        <v-col xs="6">
           <v-text-field
             v-model="search"
             append-icon="search"
@@ -306,9 +302,7 @@
         must-sort
         sort-icon="arrow_drop_down"
       >
-        <template
-          #items="props"
-        >
+        <template #items="props">
           <td>{{ props.item.name }}</td>
           <td class="text-xs-center">
             <v-tooltip top>

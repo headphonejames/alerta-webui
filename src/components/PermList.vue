@@ -14,11 +14,11 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-chip
                     v-show="editedItem.match"
@@ -36,9 +36,9 @@
                   required
                 />
                 <v-col
-                  xs12
-                  sm6
-                  md12
+                  xs="12"
+                  sm="6"
+                  md="12"
                 >
                   <v-autocomplete
                     v-model="editedItem.scopes"
@@ -62,7 +62,7 @@
                     </template>
                   </v-autocomplete>
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 
@@ -92,7 +92,7 @@
         {{ $t('Permissions') }}
         <v-spacer />
         <v-col
-          xs3
+          xs="3"
           class="mr-3 pt-3"
         >
           <v-autocomplete
@@ -115,7 +115,7 @@
             </template>
           </v-autocomplete>
         </v-col>
-        <v-col xs6>
+        <v-col xs="6">
           <v-text-field
             v-model="search"
             append-icon="search"

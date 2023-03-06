@@ -38,8 +38,8 @@
       class="pl-3"
     >
       <v-col
-        sm6
-        md4
+        sm="6"
+        md="4"
       >
         <v-card-title
           class="pb-0"
@@ -51,13 +51,13 @@
           </div>       
         </v-card-title>
         <v-card-actions>
-          <v-layout column>
+          <v-row column>
             <v-select
               v-model="isLanguages"
               :items="languages"
               :label="$t('Languages')"
             />
-          </v-layout>
+          </v-row>
         </v-card-actions>
       </v-col>
     </v-card>
@@ -67,8 +67,8 @@
       class="pl-3"
     >
       <v-col
-        sm6
-        md4
+        sm="6"
+        md="4"
       >
         <v-card-title
           class="pb-0"
@@ -80,7 +80,7 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-layout column>
+          <v-row column>
             <v-select
               v-model="longDate"
               :items="computedDateFormats"
@@ -104,7 +104,7 @@
               :items="timezoneOptions"
               :label="$t('DisplayMode')"
             />
-          </v-layout>
+          </v-row>
         </v-card-actions>
       </v-col>
     </v-card>
@@ -114,8 +114,8 @@
       class="pl-3"
     >
       <v-col
-        sm6
-        md4
+        sm="6"
+        md="4"
       >
         <v-card-title
           class="pb-0"
@@ -146,7 +146,7 @@
           </v-radio-group>
         </v-card-actions>
         <v-card-actions>
-          <v-layout column>
+          <v-row column>
             <v-select
               v-model="fontFamily"
               :items="computedFontFamilies"
@@ -224,7 +224,7 @@
               type="number"
               :suffix="$t('minutes')"
             />
-          </v-layout>
+          </v-row>
         </v-card-actions>
       </v-col>
     </v-card>
@@ -234,8 +234,8 @@
       class="pl-3"
     >
       <v-col
-        sm6
-        md4
+        sm="6"
+        md="4"
       >
         <v-card-title
           class="pb-0"
@@ -259,7 +259,7 @@
           </v-radio-group>
         </v-card-actions>
         <v-card-actions>
-          <v-layout column>
+          <v-row column>
             <v-combobox
               v-model.number="blackoutPeriod"
               :items="blackoutPeriodOptions"
@@ -267,15 +267,15 @@
               type="number"
               :suffix="$t('hours')"
             />
-          </v-layout>
+          </v-row>
         </v-card-actions>
       </v-col>
     </v-card>
 
     <v-card flat>
       <v-col
-        sm6
-        md4
+        sm="6"
+        md="4"
       >
         <v-card-actions>
           <v-spacer />

@@ -14,9 +14,9 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-tooltip
                     :key="copyIconText"
@@ -38,7 +38,7 @@
                 </v-col>
                 <v-col
                   v-if="!isAdmin"
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model="editedItem.user"
@@ -48,7 +48,7 @@
                 </v-col>
                 <v-col
                   v-if="isAdmin"
-                  xs12
+                  xs="12"
                 >
                   <v-select
                     v-model="editedItem.user"
@@ -58,7 +58,7 @@
                 </v-col>
                 <v-col
                   v-if="$config.customer_views"
-                  xs12
+                  xs="12"
                 >
                   <v-select
                     v-model="editedItem.customer"
@@ -67,7 +67,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-autocomplete
                     v-model="editedItem.scopes"
@@ -92,7 +92,7 @@
                   </v-autocomplete>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-menu
                     v-model="menu"
@@ -121,14 +121,14 @@
                   </v-menu>
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.text"
                     label="Comment"
                   />
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 
@@ -166,13 +166,13 @@
             value="active"
             variant="flat"
           >
-            <v-tooltip bottom>
-              <template #activator>
-                <v-icon>
+            <v-tooltip location="bottom">
+              <template #activator="{props}">
+                <v-icon v-bind="props">
                   check_circle
                 </v-icon>
-                <span>{{ $t('Active') }}</span>
               </template>
+              <span>{{ $t('Active') }}</span>
             </v-tooltip>
           </v-btn>
           <v-btn

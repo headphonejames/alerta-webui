@@ -14,10 +14,10 @@
 
           <v-card-text>
             <v-container grid-list-md>
-              <v-layout wrap>
+              <v-row wrap>
                 <v-col
                   v-if="$config.customer_views"
-                  xs12
+                  xs="12"
                 >
                   <v-select
                     v-model="editedItem.customer"
@@ -27,7 +27,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-select
                     v-model="editedItem.environment"
@@ -39,7 +39,7 @@
                 </v-col>
 
                 <v-col
-                  xs4
+                  xs="4"
                 >
                   <v-menu
                     ref="menu1"
@@ -70,7 +70,7 @@
                 </v-col>
 
                 <v-col
-                  xs2
+                  xs="2"
                 >
                   <v-combobox
                     v-model="editedItem.period.startTime"
@@ -78,7 +78,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs2
+                  xs="2"
                 >
                   <v-combobox
                     v-model="editedItem.period.endTime"
@@ -87,7 +87,7 @@
                 </v-col>
 
                 <v-col
-                  xs4
+                  xs="4"
                 >
                   <v-menu
                     v-model="menu2"
@@ -116,7 +116,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="editedItem.service"
@@ -130,7 +130,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.resource"
@@ -138,7 +138,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.event"
@@ -146,7 +146,7 @@
                   />
                 </v-col>
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.group"
@@ -155,7 +155,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-combobox
                     v-model="editedItem.tags"
@@ -183,7 +183,7 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.origin"
@@ -192,14 +192,14 @@
                 </v-col>
 
                 <v-col
-                  xs12
+                  xs="12"
                 >
                   <v-text-field
                     v-model.trim="editedItem.text"
                     :label="$t('Reason')"
                   />
                 </v-col>
-              </v-layout>
+              </v-row>
             </v-container>
           </v-card-text>
 

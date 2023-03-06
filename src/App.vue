@@ -7,7 +7,7 @@
     v-theme-provider might need to be wrapped around specific elements rather than the whole app
     TODO: pass isDark to this so it can be used properly or find another way to toggle themes-->
     <v-theme-provider
-      theme="light"
+      :theme="isDark ? 'dark' : 'light'"
       with-background
     >
       <div v-if="!isKiosk">
@@ -152,7 +152,7 @@
               <v-tooltip
                 location="bottom"
               >
-                <template #activator="{ props }">
+                <template #activator="{props}">
                   <v-icon
                     v-bind="props"
                     @click="saveSearch"
@@ -175,7 +175,7 @@
               <template #activator="{props}">
                 <v-switch
                   v-bind="props"
-                  :model-value="isWatch"
+                  :v-model="isWatch"
                   hide-details
                   open-delay="3000"
                   @change="toggle('isWatch', $event)"
@@ -535,7 +535,7 @@
           class="pa-1"
           fluid
         >
-          <v-layout>
+          <v-row>
             <v-col>
               <v-card>
                 <v-card-text>
@@ -553,7 +553,7 @@
                 </v-card-text>
               </v-card>
             </v-col>
-          </v-layout>
+          </v-row>
         </v-container>
       </div>
 
