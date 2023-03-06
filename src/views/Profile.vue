@@ -77,6 +77,7 @@
               <v-row wrap>
                 <v-col
                   xs="12"
+                  sm="6"
                 >
                   <v-text-field
                     v-model="profile.name"
@@ -86,6 +87,7 @@
                 </v-col>
                 <v-col
                   xs="9"
+                  sm="6"
                 >
                   <v-text-field
                     v-model="profile.preferred_username"
@@ -97,6 +99,7 @@
                 <v-col
                   v-if="provider[profile.provider]"
                   xs="3"
+                  sm="3"
                 >
                   <v-text-field
                     v-model="provider[profile.provider].text"
@@ -107,6 +110,7 @@
 
                 <v-col
                   xs="12"
+                  sm="9"
                 >
                   <v-text-field
                     v-model="profile.sub"
@@ -117,6 +121,7 @@
 
                 <v-col
                   xs="12"
+                  sm="12"
                 >
                   <v-text-field
                     v-if="profile.oid"
@@ -128,6 +133,7 @@
 
                 <v-col
                   xs="12"
+                  sm="12"
                 >
                   <v-text-field
                     v-model="profile.email"
