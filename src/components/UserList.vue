@@ -597,7 +597,7 @@ export default {
         this.$refs.form.resetValidation()
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedId = null
-      }, 300)
+      }, 100)
     },
     validate() {
       if (this.$refs.form.validate()) {

@@ -381,7 +381,7 @@ export default {
         this.groupId = null
         this.groupName = ''
         this.$store.dispatch('groups/clearGroupUsers')
-      }, 300)
+      }, 100)
     },
     validate() {
       if (this.$refs.form.validate()) {
@@ -414,7 +414,7 @@ export default {
       setTimeout(() => {
         this.$refs.form.reset()
         this.selected = null
-      }, 300)
+      }, 100)
     },
     removeUser(userId) {
       this.$store.dispatch('groups/removeUserFromGroup', [this.groupId, userId])

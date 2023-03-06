@@ -45,6 +45,7 @@
         >
           <v-col
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <v-text-field
@@ -61,6 +62,7 @@
 
           <v-col
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <v-select
@@ -80,6 +82,7 @@
           <v-col
             v-if="$config.customer_views"
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <v-select
@@ -98,6 +101,7 @@
 
           <v-col
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <v-autocomplete
@@ -116,6 +120,7 @@
 
           <v-col
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <v-select
@@ -134,6 +139,7 @@
 
           <v-col
             xs="12"
+            sm="12"
             class="pb-0"
           >
             <span class="body-2">{{ $t('DateTime') }}</span>
@@ -153,6 +159,7 @@
           <v-col
             v-show="showDateRange"
             xs="8"
+            sm="8"
             class="pb-0 pr-0"
           >
             <v-text-field
@@ -168,6 +175,7 @@
           <v-col
             v-show="showDateRange"
             xs="4"
+            sm="4"
             class="pb-0 pl-1"
           >
             <v-text-field
@@ -206,6 +214,7 @@
           <v-col
             v-show="showDateRange"
             xs="8"
+            sm="8"
             class="pb-0 pr-0"
           >
             <v-text-field
