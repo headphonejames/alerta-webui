@@ -1,5 +1,5 @@
 import {createVuetify} from 'vuetify'
-import {md} from 'vuetify/iconsets/md'
+import {aliases,md} from 'vuetify/iconsets/md'
 import 'vuetify/lib/styles/main.sass'
 import 'vuetify/styles'
 import * as comps from 'vuetify/components'
@@ -29,6 +29,7 @@ const vuetify = createVuetify({
   },
   icons: {
     defaultSet: 'md',
+    aliases,
     sets: {
       md
     }
