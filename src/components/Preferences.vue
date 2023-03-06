@@ -326,13 +326,13 @@ export default {
       'HH:mm:ss.SSS Z',
     ],
     webSafeFontFamilies: [
-      {text: 'Sintony', value: '"Sintony", Arial, sans-serif'},
-      {text: 'Helvetica', value: '"Helvetica", Arial, sans-serif'},
-      {text: 'Verdana', value: '"Verdana", Arial, sans-serif'},
-      {text: 'Courier New', value: '"Courier New", Courier, monospace'},
-      {text: 'Consolas', value: '"Consolas", Courier, monospace'},
-      {text: 'Lucida Console', value: '"Lucida Console", Monaco, monospace'},
-      {text: 'Andale Mono', value: '"Andale Mono", Courier, monospace'}
+      {title: 'Sintony', value: '"Sintony", Arial, sans-serif'},
+      {title: 'Helvetica', value: '"Helvetica", Arial, sans-serif'},
+      {title: 'Verdana', value: '"Verdana", Arial, sans-serif'},
+      {title: 'Courier New', value: '"Courier New", Courier, monospace'},
+      {title: 'Consolas', value: '"Consolas", Courier, monospace'},
+      {title: 'Lucida Console', value: '"Lucida Console", Monaco, monospace'},
+      {title: 'Andale Mono', value: '"Andale Mono", Courier, monospace'}
     ],
     fontSizeLabels: ['tiny', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'huge'],
     fontWeightLabels: [ 'thin', '', '', 'normal', '', '', 'bold', '', 'heavy'],
@@ -346,16 +346,16 @@ export default {
   computed: {
     languages() {
       return [
-        { text: i18n.global.t('English'), value: 'en' },
-        { text: i18n.global.t('French'), value: 'fr' },
-        { text: i18n.global.t('German'), value: 'de' },
-        { text: i18n.global.t('Turkish'), value: 'tr' }
+        { title: i18n.global.t('English'), value: 'en' },
+        { title: i18n.global.t('French'), value: 'fr' },
+        { title: i18n.global.t('German'), value: 'de' },
+        { title: i18n.global.t('Turkish'), value: 'tr' }
       ]
     },
     timezoneOptions() {
       return [
-        { text: i18n.global.t('UseLocal'), value: 'local' },
-        { text: i18n.global.t('UseUTC'), value: 'utc' }
+        { title: i18n.global.t('UseLocal'), value: 'local' },
+        { title: i18n.global.t('UseUTC'), value: 'utc' }
       ]
     },
     isLanguages: {
@@ -390,7 +390,7 @@ export default {
         this.$store.getters.getConfig('dates').longDate,
         ...this.longDateFormats
       ])]
-      return allDateFormats.map(f => ({text: moment().format(f), value: f}))
+      return allDateFormats.map(f => ({title: moment().format(f), value: f}))
     },
     computedTimeFormats() {
       moment.locale(i18n.global.locale.value)
@@ -398,7 +398,7 @@ export default {
         this.$store.getters.getConfig('dates').shortTime,
         ...this.timeFormats,
       ])]
-      return allTimeFormats.map(f => ({text: moment().format(f), value: f}))
+      return allTimeFormats.map(f => ({title: moment().format(f), value: f}))
     },
     longDate: {
       get() {
@@ -468,7 +468,7 @@ export default {
     computedFontFamilies() {
       const defaultFontFamily = this.$store.getters.getConfig('font')['font-family']
       return [
-        {text: defaultFontFamily.split(',')[0].replace(/"/g, ''), value: defaultFontFamily},
+        {title: defaultFontFamily.split(',')[0].replace(/"/g, ''), value: defaultFontFamily},
         ...this.webSafeFontFamilies
       ]
     },
