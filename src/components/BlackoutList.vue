@@ -237,7 +237,7 @@
             value="active"
             variant="flat"
           >
-            <v-tooltip bottom>
+            <v-tooltip location="bottom">
               <template #activator="{props}">
                 <v-icon v-bind="props">
                   notifications_paused
@@ -250,7 +250,7 @@
             value="pending"
             variant="flat"
           >
-            <v-tooltip bottom>
+            <v-tooltip location="bottom">
               <template #activator="{props}">
                 <v-icon v-bind="props">
                   schedule
@@ -263,7 +263,7 @@
             value="expired"
             variant="flat"
           >
-            <v-tooltip bottom>
+            <v-tooltip location="bottom">
               <template #activator="{props}">
                 <v-icon
                   v-bind="props">
