@@ -20,10 +20,10 @@
           #items="props"
         >
           <td>{{ props.item.event }}</td>
-          <td class="text-xs-center">
+          <td class="text-center">
             {{ props.item.count }}
           </td>
-          <td class="text-xs-center">
+          <td class="text-center">
             {{ props.item.duplicateCount }}
           </td>
           <td>{{ props.item.environments.join(', ') }}</td>

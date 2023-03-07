@@ -287,7 +287,7 @@
             />
           </td>
           <td
-            class="text-xs-center"
+            class="text-center"
           >
             {{ props.item.count }}
           </td>

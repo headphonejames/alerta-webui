@@ -304,7 +304,7 @@
       >
         <template #items="props">
           <td>{{ props.item.name }}</td>
-          <td class="text-xs-center">
+          <td class="text-center">
             <v-tooltip top>
               <template #activator="{props}">
                 <v-icon
@@ -322,7 +322,7 @@
           </td>
           <td>{{ props.item.login }}</td>
           <td>{{ props.item.email }}</td>
-          <td class="text-xs-center">
+          <td class="text-center">
             <v-tooltip top>
               <template #activator="{props}">
                 <v-icon

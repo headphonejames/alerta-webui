@@ -492,7 +492,7 @@
         </tr>
       </template>
       <template #no-data>
-        <div class="text-xs-center">
+        <div class="text-center">
           <span v-if="isLoading">{{ $t('Loading') }}...</span>
           <span v-if="!isLoading">{{ $t('NoDataAvailable') }}</span>
         </div>

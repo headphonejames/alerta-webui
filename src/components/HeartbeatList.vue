@@ -107,7 +107,7 @@
           {{ diffTime(props.item.createTime, props.item.receiveTime) }} ms
         </td>
         <td
-          class="text-xs-center text-no-wrap"
+          class="text-center text-no-wrap"
         >
           {{ $filters.hhmmss(timeoutLeft(props.item)) }}
         </td>

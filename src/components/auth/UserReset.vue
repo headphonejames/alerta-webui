@@ -14,7 +14,7 @@
         offset-xs0
         offset-sm2
       >
-        <p class="text-xs-center text-h5 font-weight-medium">
+        <p class="text-center text-h5 font-weight-medium">
           <span>{{ $t('ChooseNewPassword') }}</span>
         </p>
         <v-form @submit.prevent="reset()">
@@ -44,7 +44,7 @@
             {{ $t('ResetPassword') }}
           </v-btn>
         </v-form>
-        <div class="text-xs-center">
+        <div class="text-center">
           <span class="body-2">
             {{ $t('AlreadyHaveAccount') }}
           </span>

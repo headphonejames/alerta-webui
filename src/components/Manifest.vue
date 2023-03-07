@@ -6,7 +6,7 @@
     hide-actions
   >
     <template #items="props">
-      <td class="text-xs-center">
+      <td class="text-center">
         {{ version }}
       </td>
       <td>

@@ -21,7 +21,7 @@
               align-center
               justify-center
               layout
-              text-xs-center
+              text-center
             >
               <v-avatar
                 size="128"
