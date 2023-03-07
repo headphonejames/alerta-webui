@@ -222,7 +222,7 @@
               ref="menu1"
               v-model="menu1"
               :close-on-content-click="false"
-              :nudge-right="40"
+              :offset="40"
               lazy
               transition="scale-transition"
               offset-y
@@ -274,7 +274,7 @@
               ref="menu2"
               v-model="menu2"
               :close-on-content-click="false"
-              :nudge-right="40"
+              :offset="40"
               lazy
               transition="scale-transition"
               offset-y

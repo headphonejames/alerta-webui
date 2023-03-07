@@ -97,7 +97,7 @@
                   <v-menu
                     v-model="menu"
                     :close-on-content-click="false"
-                    :nudge-right="40"
+                    :offset="40"
                     lazy
                     transition="scale-transition"
                     offset-y
