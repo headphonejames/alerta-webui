@@ -118,7 +118,7 @@
                     :type="showPassword ? 'text' : 'password'"
                     name="input-10-2"
                     :label="$t('ConfirmPassword')"
-                    :value="editedItem.confirmPassword"
+                    :model-value="editedItem.confirmPassword"
                     autocomplete="new-password"
                     @click:append="showPassword = !showPassword"
                   />
@@ -142,14 +142,14 @@
                     item-title="name"
                     item-value="id"
                     chips
-                    solo
+                    variant="solo"
                     multiple
                     :disabled="!editedId"
                   >
                     <template #selection="data">
                       <v-chip
-                        :selected="data.selected"
-                        close
+                        :value="data.selected"
+                        closable
                       >
                         <strong>{{ data.item.name }}</strong>&nbsp;
                         <span>({{ $t('Group') }})</span>
@@ -169,13 +169,13 @@
                     :label="$t('Roles')"
                     chips
                     clearable
-                    solo
+                    variant="solo"
                     multiple
                   >
                     <template #selection="data">
                       <v-chip
-                        :selected="data.selected"
-                        close
+                        :value="data.selected"
+                        closable
                       >
                         <strong>{{ data.item }}</strong>&nbsp;
                         <span>({{ $t('role') }})</span>
@@ -200,14 +200,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="close"
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="validate"
             >
@@ -219,12 +219,12 @@
     </v-dialog>
 
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('Users') }}
         <v-spacer />
         <v-btn-toggle
           v-model="status"
-          class="transparent"
+          class="bg-transparent"
           multiple
         >
           <v-btn
@@ -270,8 +270,8 @@
               #selection="data"
             >
               <v-chip
-                :selected="data.selected"
-                close
+                :value="data.selected"
+                closable
               >
                 <strong>{{ data.item }}</strong>&nbsp;
                 <span>({{ $t('role') }})</span>
@@ -305,7 +305,7 @@
         <template #items="props">
           <td>{{ props.item.name }}</td>
           <td class="text-center">
-            <v-tooltip top>
+            <v-tooltip location="top">
               <template #activator="{props}">
                 <v-icon
                   v-bind:="props"
@@ -323,7 +323,7 @@
           <td>{{ props.item.login }}</td>
           <td>{{ props.item.email }}</td>
           <td class="text-center">
-            <v-tooltip top>
+            <v-tooltip location="top">
               <template #activator="{props}">
                 <v-icon
                   v-bind="props"
@@ -354,20 +354,20 @@
               <span>({{ $t('role') }})</span>
             </v-chip>
           </td>
-          <td class="text-xs-right">
+          <td class="text-right">
             <date-time
               :value="props.item.createTime"
               format="mediumDate"
             />
           </td>
-          <td class="text-xs-right">
+          <td class="text-right">
             <date-time
               v-if="props.item.lastLogin"
               :value="props.item.lastLogin"
               format="mediumDate"
             />
           </td>
-          <td class="text-xs-right">
+          <td class="text-right">
             {{ props.item.text }}
           </td>
           <td class="text-no-wrap">
@@ -378,8 +378,8 @@
               @click="editItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 edit
               </v-icon>
@@ -391,8 +391,8 @@
               @click="deleteItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 delete
               </v-icon>

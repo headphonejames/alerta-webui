@@ -32,7 +32,7 @@
               {{ $t('OpenGitHub') }}
               <v-icon
                 v-bind="props"
-                small
+                size="small"
               >launch</v-icon>
             </template>
           </v-tooltip>
@@ -47,12 +47,12 @@
         </a>
         <v-tooltip
           :key="copyIconText"
-          top
+          location="top"
         >
           <template #activator="{props}">
             <v-icon
               v-bind="props"
-              small
+              size="small"
               class="px-1"
               @click="clipboardCopy($config.endpoint)"
             >

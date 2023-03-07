@@ -139,7 +139,7 @@
             :flat="!hasFocus"
             :label="$t('Search')"
             prepend-inner-icon="search"
-            solo
+            variant="solo"
             clearable
             height="44"
             class="pt-2 mr-3 hidden-sm-and-down"
@@ -178,7 +178,7 @@
                   :v-model="isWatch"
                   hide-details
                   open-delay="3000"
-                  @change="toggle('isWatch', $event)"
+                  @update:model-value="toggle('isWatch', $event)"
                 />
               </template>
               <span>{{ $t('Watch') }}</span>
@@ -258,7 +258,7 @@
           <span class="hidden-xs-only">
             <v-btn
               v-show="!isLoggedIn && isSignupEnabled"
-              round
+              rounded
               variant="outlined"
               color="primary"
               to="/signup"
@@ -267,7 +267,7 @@
             </v-btn>
             <v-btn
               v-show="!isLoggedIn"
-              round
+              rounded
               color="primary"
               to="/login"
             >
@@ -513,7 +513,7 @@
           <span class="hidden-xs-only">
             <v-btn
               v-show="!isLoggedIn && isSignupEnabled"
-              round
+              rounded
               variant="outlined"
               color="primary"
               disabled
@@ -522,7 +522,7 @@
             </v-btn>
             <v-btn
               v-show="!isLoggedIn"
-              round
+              rounded
               color="primary"
               disabled
             >
@@ -570,7 +570,7 @@
           <v-btn
             v-show="!isLoggedIn && isSignupEnabled"
             block
-            round
+            rounded
             variant="outlined"
             color="primary"
             to="/signup"
@@ -581,7 +581,7 @@
           <v-btn
             v-show="!isLoggedIn"
             block
-            round
+            rounded
             color="primary"
             to="/login"
             :disabled="selected.length > 0"

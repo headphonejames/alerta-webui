@@ -89,7 +89,7 @@
           </v-btn>
         </v-form>
         <div class="text-center">
-          <span class="body-2">
+          <span class="text-body-2">
             {{ $t('AlreadyHaveAccount') }}
           </span>
           <v-btn

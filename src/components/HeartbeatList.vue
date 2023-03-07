@@ -1,11 +1,11 @@
 <template>
   <v-card>
-    <v-card-title class="title">
+    <v-card-title class="text-h6">
       {{ $t('Heartbeats') }}
       <v-spacer />
       <v-btn-toggle
         v-model="status"
-        class="transparent"
+        class="bg-transparent"
         multiple
       >
         <v-btn
@@ -127,8 +127,8 @@
             @click="deleteItem(props.item)"
           >
             <v-icon
-              small
-              color="grey darken-3"
+              size="small"
+              color="grey-darken-3"
             >
               delete
             </v-icon>

@@ -5,7 +5,7 @@
       <v-card-text>
         <div class="flex xs12 ma-1">
           <div class="d-flex align-top">
-            <div class="flex xs3 text-xs-left">
+            <div class="flex xs3 text-left">
               <div class="text-center">
                 <v-menu offset-y>
                   <template #activator="{ on, attrs }">
@@ -71,7 +71,7 @@
       <v-card-text>
         <div class="flex xs12 ma-1">
           <div class="d-flex align-top">
-            <div class="flex xs3 text-xs-left">
+            <div class="flex xs3 text-left">
               <div class="text-center">
                 <v-btn
                   color="primary"

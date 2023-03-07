@@ -280,7 +280,7 @@
         <v-card-actions>
           <v-spacer />
           <v-btn
-            color="blue darken-1"
+            color="blue-darken-1"
             variant="flat"
             @click="reset"
           >

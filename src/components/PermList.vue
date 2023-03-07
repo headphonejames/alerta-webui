@@ -22,7 +22,7 @@
                 >
                   <v-chip
                     v-show="editedItem.match"
-                    close
+                    closable
                     @click="editedItem.match = null"
                   >
                     <strong>{{ editedItem.match }}</strong>&nbsp;
@@ -46,15 +46,15 @@
                     :label="$t('Scopes')"
                     chips
                     clearable
-                    solo
+                    variant="solo"
                     multiple
                   >
                     <template
                       #selection="data"
                     >
                       <v-chip
-                        :selected="data.selected"
-                        close
+                        :value="data.selected"
+                        closable
                       >
                         <strong>{{ data.item }}</strong>&nbsp;
                         <span>({{ $t('scope') }})</span>
@@ -69,14 +69,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="close"
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="validate"
             >
@@ -88,7 +88,7 @@
     </v-dialog>
 
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('Permissions') }}
         <v-spacer />
         <v-col
@@ -106,8 +106,8 @@
               #selection="data"
             >
               <v-chip
-                :selected="data.selected"
-                close
+                :value="data.selected"
+                closable
               >
                 <strong>{{ data.item }}</strong>&nbsp;
                 <span>({{ $t('scope') }})</span>
@@ -144,12 +144,12 @@
               <strong>{{ props.item.match }}</strong>&nbsp;
               <span>({{ $t('role') }})</span>
             </v-chip>
-            <v-tooltip top>
+            <v-tooltip location="top">
               <template #activator="{props}">
                 <v-icon
                   v-if="systemRoles.includes(props.item.match)"
                   v-bind="props"
-                  small
+                  size="small"
                 >
                   lock
                 </v-icon>
@@ -176,8 +176,8 @@
               @click="editItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 edit
               </v-icon>
@@ -190,8 +190,8 @@
               @click="deleteItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 delete
               </v-icon>

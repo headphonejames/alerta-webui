@@ -3,7 +3,7 @@
     flat
   >
     <v-card
-      tile
+      rounded="0"
       flat
     >
       <v-toolbar
@@ -281,7 +281,7 @@
                   closable
                   type="info"
                   class="ma-1"
-                  @input="deleteNote(item.id, note.id)"
+                  @update:model-value="deleteNote(item.id, note.id)"
                 >
                   <b>{{ note.user || 'Anonymous' }}</b> {{ $t('addedNoteOn') }}
                   <span v-if="note.updateTime">
@@ -322,12 +322,12 @@
                 <v-card-text>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('AlertId') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="console-text">{{ item.id }}</span>
                         </div>
@@ -336,12 +336,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('LastReceiveAlertId') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="console-text">{{ item.lastReceiveId }}</span>
                         </div>
@@ -350,12 +350,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('CreateTime') }}
                         </div>
                       </div>
-                      <div class="flex xs9 text-xs-left">
+                      <div class="flex xs9 text-left">
                         <div>
                           <date-time
                             v-if="item.createTime"
@@ -369,12 +369,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('ReceiveTime') }}
                         </div>
                       </div>
-                      <div class="flex xs9 text-xs-left">
+                      <div class="flex xs9 text-left">
                         <div>
                           <date-time
                             v-if="item.receiveTime"
@@ -388,12 +388,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('LastReceiveTime') }}
                         </div>
                       </div>
-                      <div class="flex xs9 text-xs-left">
+                      <div class="flex xs9 text-left">
                         <div>
                           <date-time
                             v-if="item.lastReceiveTime"
@@ -410,12 +410,12 @@
                     class="flex xs12 ma-1"
                   >
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Customer') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('customer', item.customer)"
@@ -427,12 +427,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Service') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span
                             v-for="service in item.service"
@@ -447,12 +447,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Environment') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('environment', item.environment)"
@@ -464,12 +464,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Resource') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('resource', item.resource)"
@@ -481,12 +481,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Event') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('event', item.event)"
@@ -498,12 +498,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Correlate') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span
                             v-for="event in item.correlate"
@@ -518,12 +518,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Group') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('group', item.group)"
@@ -535,12 +535,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Severity') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span :class="['label', 'label-' + item.previousSeverity]">
                             {{ $filters.capitalize(item.previousSeverity) }}
@@ -555,12 +555,12 @@
 
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Status') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="label">
                             {{ $filters.capitalize(item.status) }}
@@ -578,12 +578,12 @@
                     class="flex xs12 ma-1"
                   >
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey" />
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
-                          <v-icon small>
+                          <v-icon size="small">
                             error_outline
                           </v-icon>
                           <i>&nbsp;{{ statusNote.text }}</i>
@@ -593,12 +593,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Value') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           {{ item.value }}
                         </div>
@@ -607,12 +607,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Text') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span>{{ item.text }}</span>
                         </div>
@@ -621,12 +621,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('TrendIndication') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="label">
                             {{ $filters.splitCaps(item.trendIndication) }}
@@ -637,12 +637,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Timeout') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           {{ item.timeout }}
                         </div>
@@ -651,12 +651,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Type') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="label">
                             {{ $filters.splitCaps(item.type) }}
@@ -667,12 +667,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('DuplicateCount') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           {{ item.duplicateCount }}
                         </div>
@@ -681,12 +681,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Repeat') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <span class="label">
                             {{ $filters.capitalize(item.repeat) }}
@@ -697,12 +697,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Origin') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           class="clickable"
                           @click="queryBy('origin', item.origin)"
@@ -714,12 +714,12 @@
                   </div>
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Tags') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <v-chip
                             v-for="tag in item.tags"
@@ -741,12 +741,12 @@
                     class="flex xs12 ma-1"
                   >
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $t('Jira') }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div>
                           <a
                             :href="item.attributes.jira.url"
@@ -765,12 +765,12 @@
                     class="flex xs12 ma-1"
                   >
                     <div class="d-flex align-top">
-                      <div class="flex xs3 text-xs-left">
+                      <div class="flex xs3 text-left">
                         <div class="text-grey">
                           {{ $filters.splitCaps(attr) }}
                         </div>
                       </div>
-                      <div class="flex xs6 text-xs-left">
+                      <div class="flex xs6 text-left">
                         <div
                           v-if="typeof value === 'object'"
                         >

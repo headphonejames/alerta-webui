@@ -16,7 +16,7 @@
         <v-list-item-action>
           <v-tooltip
             v-if="profile.provider && profile.provider != 'basic'"
-            top
+            location="top"
           >
             <template #activator="{props}">
               <v-icon v-bind="props">
@@ -29,7 +29,7 @@
           </v-tooltip>
           <v-tooltip
             v-else-if="profile.email_verified"
-            top
+            location="top"
           >
             <template #activator="{props}">
               <v-icon v-bind="props">
@@ -40,7 +40,7 @@
           </v-tooltip>
           <v-tooltip
             v-else
-            top
+            location="top"
           >
             <template #activator="{props}">
               <v-icon v-bind="props">
@@ -66,14 +66,14 @@
           >
             <v-chip
               v-if="index < 3"
-              outline
+              variant="outlined"
               small
             >
               <span>{{ customer }}</span>
             </v-chip>
             <span
               v-if="index === 3"
-              class="text-grey caption"
+              class="text-grey text-caption"
             >(+{{ customers.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -94,7 +94,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="text-grey caption"
+              class="text-grey text-caption"
             >(+{{ profile.orgs.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -114,7 +114,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="text-grey caption"
+              class="text-grey text-caption"
             >(+{{ profile.groups.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -134,7 +134,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="text-grey caption"
+              class="text-grey text-caption"
             >(+{{ profile.roles.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -154,7 +154,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="text-grey caption"
+              class="text-grey text-caption"
             >(+{{ scopes.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>

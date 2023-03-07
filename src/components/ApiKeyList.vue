@@ -75,15 +75,15 @@
                     :label="$t('Scopes')"
                     chips
                     clearable
-                    solo
+                    variant="solo"
                     multiple
                   >
                     <template
                       #selection="data"
                     >
                       <v-chip
-                        :selected="data.selected"
-                        close
+                        :value="data.selected"
+                        closable
                       >
                         <strong>{{ data.item }}</strong>&nbsp;
                         <span>({{ $t('scope') }})</span>
@@ -135,14 +135,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="close"
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="save"
             >
@@ -154,12 +154,12 @@
     </v-dialog>
 
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('APIKeys') }}
         <v-spacer />
         <v-btn-toggle
           v-model="status"
-          class="transparent"
+          class="bg-transparent"
           multiple
         >
           <v-btn
@@ -220,7 +220,7 @@
             {{ props.item.key }}
             <v-tooltip
               :key="copyIconText"
-              top
+              location="top"
             >
               <template #activator="{props}">
                 <v-icon
@@ -238,13 +238,13 @@
           <td>
             <v-tooltip
               v-if="!isExpired(props.item.expireTime)"
-              top
+              location="top"
             >
               <template #activator="{props}">
                 <v-icon
                   v-bind="props"
                   color="primary"
-                  small
+                  size="small"
                 >
                   check_circle
                 </v-icon>
@@ -254,13 +254,13 @@
             </v-tooltip>
             <v-tooltip
               v-if="isExpired(props.item.expireTime)"
-              top
+              location="top"
             >
               <template #activator="{props}">
                 <v-icon
                   v-bind="props"
                   color="error"
-                  small
+                  size="small"
                 >
                   error_outline
                 </v-icon>
@@ -305,8 +305,8 @@
               @click="editItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 edit
               </v-icon>
@@ -318,8 +318,8 @@
               @click="deleteItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 delete
               </v-icon>
@@ -332,8 +332,8 @@
               class="btn--plain mx-0"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 get_app
               </v-icon>

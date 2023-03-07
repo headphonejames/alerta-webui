@@ -1,14 +1,14 @@
 <template>
   <v-navigation-drawer
-    :value="sidesheet"
+    :model-value="sidesheet"
     clipped
     disable-resize-watcher
     absolute
-    hide-overlay
+    :scrim="false"
     width="300"
     location="end"
   >
-    <v-card tile>
+    <v-card rounded="0">
       <v-toolbar
         :color="isDark ? '#616161' : '#eeeeee'"
         card
@@ -173,13 +173,13 @@
             xs="12"
             class="pb-0"
           >
-            <span class="body-2">{{ $t('DateTime') }}</span>
+            <span class="text-body-2">{{ $t('DateTime') }}</span>
             <v-select
               v-model="filterDateRange"
               :items="dateRanges"
               name="dateRange"
               :label="$t('DateTime')"
-              solo
+              variant="solo"
               flat
               prepend-inner-icon="schedule"
               item-value="range"
@@ -309,7 +309,7 @@
           </v-btn>
           <v-spacer />
           <v-btn
-            color="blue darken-1"
+            color="blue-darken-1"
             variant="flat"
             @click="reset"
           >

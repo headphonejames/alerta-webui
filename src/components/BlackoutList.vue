@@ -167,12 +167,12 @@
                     <template #selection="data">
                       <v-chip
                         :key="JSON.stringify(data.item)"
-                        :selected="data.selected"
+                        :value="data.selected"
                         :disabled="data.disabled"
                         class="v-chip--select-multi"
                         label
                         small
-                        @input="data.parent.selectItem(data.item)"
+                        @update:model-value="data.parent.selectItem(data.item)"
                       >
                         <v-icon start>
                           label
@@ -206,14 +206,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="close"
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="validate"
             >
@@ -225,12 +225,12 @@
     </v-dialog>
 
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('Blackouts') }}
         <v-spacer />
         <v-btn-toggle
           v-model="status"
-          class="transparent"
+          class="bg-transparent"
           multiple
         >
           <v-btn
@@ -297,27 +297,27 @@
       >
         <template #items="props">
           <td>
-            <v-tooltip top>
+            <v-tooltip location="top">
               <template #activator="{props}">
                 {{ $t('WholeEnvironment') }}
                 <v-icon
                   v-if="onlyEnvironment(props.item)"
                   v-bind="props"
                   color="red"
-                  small
+                  size="small"
                 >
                   report_problem
                 </v-icon>
               </template>
             </v-tooltip>
-            <v-tooltip top>
+            <v-tooltip location="top">
               <template #activator="{props}">
                 {{ $t('AllOrigin') }}
                 <v-icon
                   v-if="onlyOrigin(props.item)"
                   v-bind="props"
                   color="red"
-                  small
+                  size="small"
                 >
                   report_problem
                 </v-icon>
@@ -334,7 +334,7 @@
             <v-chip
               v-for="service in props.item.service"
               :key="service"
-              outline
+              variant="outlined"
               small
             >
               {{ service }}
@@ -356,15 +356,15 @@
             </v-chip>
           </td>
           <td>{{ props.item.origin }}</td>
-          <td class="text-xs-right">
-            <v-tooltip top>
+          <td class="text-right">
+            <v-tooltip location="top">
               <template #activator="{props}">
                 {{ $filters.capitalize(props.item.status) }}
                 <v-icon
                   v-if="props.item.status == 'pending'"
                   v-bind="props"
                   light
-                  small
+                  size="small"
                 >
                   schedule
                 </v-icon>
@@ -373,7 +373,7 @@
                   v-if="props.item.status == 'active'"
                   v-bind="props"
                   color="primary"
-                  small
+                  size="small"
                 >
                   notifications_paused
                 </v-icon>
@@ -381,34 +381,34 @@
                 <v-icon
                   v-if="props.item.status == 'expired'"
                   v-bind="props"
-                  small
+                  size="small"
                 >
                   block
                 </v-icon>
               </template>
             </v-tooltip>
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             <date-time
               :value="props.item.startTime"
               format="mediumDate"
             />
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             <date-time
               :value="props.item.endTime"
               format="mediumDate"
             />
           </td>
           <td
-            class="text-xs-left text-no-wrap"
+            class="text-left text-no-wrap"
           >
             {{ $filters.until(props.item.endTime) }}
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ props.item.user }}
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ props.item.text }}
           </td>
           <td class="text-no-wrap">
@@ -419,8 +419,8 @@
               @click="editItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 edit
               </v-icon>
@@ -432,8 +432,8 @@
               @click="copyItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 content_copy
               </v-icon>
@@ -445,8 +445,8 @@
               @click="deleteItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 delete
               </v-icon>

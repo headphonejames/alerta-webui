@@ -31,7 +31,7 @@
                   >
                     <v-chip
                       v-show="editedItem.customer"
-                      close
+                      closable
                       @click="editedItem.customer = null"
                     >
                       <strong>{{ editedItem.customer }}</strong>&nbsp;
@@ -52,14 +52,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="close"
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="validate"
             >
@@ -71,7 +71,7 @@
     </v-dialog>
 
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('Customers') }}
         <v-spacer />
         <v-text-field
@@ -110,8 +110,8 @@
               @click="editItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 edit
               </v-icon>
@@ -123,8 +123,8 @@
               @click="deleteItem(props.item)"
             >
               <v-icon
-                small
-                color="grey darken-3"
+                size="small"
+                color="grey-darken-3"
               >
                 delete
               </v-icon>
