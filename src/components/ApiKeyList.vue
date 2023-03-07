@@ -100,7 +100,6 @@
                     :offset="40"
                     lazy
                     transition="scale-transition"
-                    offset-y
                     full-width
                     min-width="290px"
                   >

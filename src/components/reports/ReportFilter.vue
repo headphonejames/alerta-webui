@@ -22,7 +22,7 @@
         <v-menu
           location="bottom"
           end
-          offset-y
+          offset
         >
           <template #activator="{props}">
             <v-btn
@@ -225,7 +225,6 @@
               :offset="40"
               lazy
               transition="scale-transition"
-              offset-y
               full-width
               max-width="290px"
               min-width="290px"
@@ -277,7 +276,6 @@
               :offset="40"
               lazy
               transition="scale-transition"
-              offset-y
               full-width
               max-width="290px"
               min-width="290px"

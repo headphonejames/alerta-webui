@@ -7,7 +7,7 @@
           <div class="d-flex align-top">
             <div class="flex xs3 text-left">
               <div class="text-center">
-                <v-menu offset-y>
+                <v-menu offset>
                   <template #activator="{ on, attrs }">
                     <v-btn
                       color="primary"
