@@ -147,7 +147,7 @@
                   v-if="lastNote(props.item)"
                   class="pl-2"
                 >
-                  <v-tooltip bottom>
+                  <v-tooltip location="bottom">
                     <template #activator="{ on, attrs }">
                       <v-icon
                         v-bind="attrs"
@@ -456,7 +456,7 @@
               </v-btn> -->
 
               <v-menu
-                bottom
+                location="bottom"
                 start
               >
                 <template #activator="{props}">

@@ -12,7 +12,7 @@
           value="ok"
           variant="flat"
         >
-          <v-tooltip bottom>
+          <v-tooltip location="bottom">
             <template #activator="{props}">
               <v-icon v-bind="props">
                 check_circle
@@ -25,7 +25,7 @@
           value="slow"
           variant="flat"
         >
-          <v-tooltip bottom>
+          <v-tooltip location="bottom">
             <template #activator="{props}">
               <v-icon v-bind="props">
                 access_time
@@ -38,7 +38,7 @@
           value="expired"
           variant="flat"
         >
-          <v-tooltip bottom>
+          <v-tooltip location="bottom">
             <template #activator="{props}">
               <v-icon v-bind="props">
                 timer_off

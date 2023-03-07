@@ -231,7 +231,7 @@
             value="active"
             variant="flat"
           >
-            <v-tooltip bottom>
+            <v-tooltip location="bottom">
               <template #activator="{props}">
                 <v-icon v-bind="props">
                   check_circle
@@ -244,7 +244,7 @@
             value="inactive"
             variant="flat"
           >
-            <v-tooltip bottom>
+            <v-tooltip location="bottom">
               <template #activator="{props}">
                 <v-icon v-bind="props">
                   block

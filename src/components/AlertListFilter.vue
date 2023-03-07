@@ -19,7 +19,7 @@
         <v-spacer />
         <v-toolbar-items />
         <v-menu
-          bottom
+          location="bottom"
           end
           offset-y
         >
