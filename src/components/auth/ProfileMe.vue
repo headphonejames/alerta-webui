@@ -73,7 +73,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="grey--text caption"
+              class="text-grey caption"
             >(+{{ customers.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -94,7 +94,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="grey--text caption"
+              class="text-grey caption"
             >(+{{ profile.orgs.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -114,7 +114,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="grey--text caption"
+              class="text-grey caption"
             >(+{{ profile.groups.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -134,7 +134,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="grey--text caption"
+              class="text-grey caption"
             >(+{{ profile.roles.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>
@@ -154,7 +154,7 @@
             </v-chip>
             <span
               v-if="index === 3"
-              class="grey--text caption"
+              class="text-grey caption"
             >(+{{ scopes.length - 1 }} {{ $t('others') }})</span>
           </span>
         </v-list-item-title>

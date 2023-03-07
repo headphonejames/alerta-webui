@@ -323,7 +323,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('AlertId') }}
                         </div>
                       </div>
@@ -337,7 +337,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('LastReceiveAlertId') }}
                         </div>
                       </div>
@@ -351,7 +351,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('CreateTime') }}
                         </div>
                       </div>
@@ -370,7 +370,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('ReceiveTime') }}
                         </div>
                       </div>
@@ -389,7 +389,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('LastReceiveTime') }}
                         </div>
                       </div>
@@ -411,7 +411,7 @@
                   >
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Customer') }}
                         </div>
                       </div>
@@ -428,7 +428,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Service') }}
                         </div>
                       </div>
@@ -448,7 +448,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Environment') }}
                         </div>
                       </div>
@@ -465,7 +465,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Resource') }}
                         </div>
                       </div>
@@ -482,7 +482,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Event') }}
                         </div>
                       </div>
@@ -499,7 +499,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Correlate') }}
                         </div>
                       </div>
@@ -519,7 +519,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Group') }}
                         </div>
                       </div>
@@ -536,7 +536,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Severity') }}
                         </div>
                       </div>
@@ -556,7 +556,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Status') }}
                         </div>
                       </div>
@@ -579,7 +579,7 @@
                   >
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text" />
+                        <div class="text-grey" />
                       </div>
                       <div class="flex xs6 text-xs-left">
                         <div>
@@ -594,7 +594,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Value') }}
                         </div>
                       </div>
@@ -608,7 +608,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Text') }}
                         </div>
                       </div>
@@ -622,7 +622,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('TrendIndication') }}
                         </div>
                       </div>
@@ -638,7 +638,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Timeout') }}
                         </div>
                       </div>
@@ -652,7 +652,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Type') }}
                         </div>
                       </div>
@@ -668,7 +668,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('DuplicateCount') }}
                         </div>
                       </div>
@@ -682,7 +682,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Repeat') }}
                         </div>
                       </div>
@@ -698,7 +698,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Origin') }}
                         </div>
                       </div>
@@ -715,7 +715,7 @@
                   <div class="flex xs12 ma-1">
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Tags') }}
                         </div>
                       </div>
@@ -742,7 +742,7 @@
                   >
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $t('Jira') }}
                         </div>
                       </div>
@@ -766,7 +766,7 @@
                   >
                     <div class="d-flex align-top">
                       <div class="flex xs3 text-xs-left">
-                        <div class="grey--text">
+                        <div class="text-grey">
                           {{ $filters.splitCaps(attr) }}
                         </div>
                       </div>

@@ -6,7 +6,7 @@
           <div class="text-h5">
             {{ $t('Top') }} {{ rowsPerPage }} {{ $t('Flapping') }}
           </div><br>
-          <span class="grey--text">{{ $t('TopFlappingDescription') }}</span>
+          <span class="text-grey">{{ $t('TopFlappingDescription') }}</span>
         </div>
         <v-spacer />
       </v-card-title>
