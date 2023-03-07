@@ -480,7 +480,7 @@
             v-model="menu"
             :close-on-content-click="false"
             :nudge-width="200"
-            offset-x
+            offset
           >
             <template #activator="{props}">
               <v-btn
