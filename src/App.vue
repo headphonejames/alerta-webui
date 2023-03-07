@@ -21,7 +21,7 @@
         >
           <v-toolbar
             :color="isDark ? '#616161' : '#eeeeee'"
-            flat
+            variant="flat"
           >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 

@@ -148,8 +148,7 @@
               :items="dateRanges"
               name="dateRange"
               :label="$t('DateTime')"
-              variant="solo"
-              flat
+              variant="flat solo"
               prepend-inner-icon="schedule"
               item-value="range"
               hide-details
