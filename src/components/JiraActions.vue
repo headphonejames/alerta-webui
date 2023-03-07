@@ -11,7 +11,7 @@
                   <template #activator="{ on, attrs }">
                     <v-btn
                       color="primary"
-                      dark
+                      theme="dark"
                       v-bind="attrs"
                       v-on="on"
                     >
@@ -46,7 +46,7 @@
               <div class="text-center">
                 <v-btn
                   color="primary"
-                  dark
+                  theme="dark"
                   @click="toggleAttachJira"
                 >
                   Attach Jira
@@ -55,7 +55,7 @@
                   <v-text-field v-model="jira_key" />
                   <v-btn
                     color="primary"
-                    dark
+                    theme="dark"
                     @click="attachJira(id)"
                   >
                     Attach
@@ -75,7 +75,7 @@
               <div class="text-center">
                 <v-btn
                   color="primary"
-                  dark
+                  theme="dark"
                   @click="detachJira(id)"
                 >
                   Detach Jira
