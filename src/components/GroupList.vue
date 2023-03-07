@@ -7,7 +7,7 @@
       <v-form ref="form">
         <v-card>
           <v-card-title>
-            <span class="headline">
+            <span class="text-h5">
               {{ $t('AddRemoveUsers') }}
             </span>
           </v-card-title>
@@ -60,7 +60,7 @@
 
           <v-card-title primary-title>
             <div>
-              <div class="headline">
+              <div class="text-h5">
                 {{ groupName }}
               </div>
               <span>{{ $t('UsersInGroup') }}</span>
@@ -109,7 +109,7 @@
       <v-form ref="form">
         <v-card>
           <v-card-title>
-            <span class="headline">
+            <span class="text-h5">
               {{ formTitle }}
             </span>
           </v-card-title>

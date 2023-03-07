@@ -15,14 +15,14 @@
         offset-sm2
       >
         <div v-show="message">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ $t('Thanks') }} {{ message }}{{ $t('YouCanNowLogin1') }} <a href="/login">
               {{ $t('YouCanNowLogin2') }}
             </a>
           </p>
         </div>
         <div v-show="error">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ $t('EmailConfirmFailed') }}
             <a href="/">
               {{ $t('TryAgain') }}

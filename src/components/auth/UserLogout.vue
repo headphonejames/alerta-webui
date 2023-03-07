@@ -14,7 +14,7 @@
         offset-xs0
         offset-sm2
       >
-        <p class="text-xs-center headline font-weight-medium">
+        <p class="text-xs-center text-h5 font-weight-medium">
           {{ $t('LoggedOut') }}
         </p>
       </v-col>

@@ -8,7 +8,7 @@
       <v-form ref="form">
         <v-card>
           <v-card-title>
-            <span class="headline">
+            <span class="text-h5">
               Profile
             </span>
           </v-card-title>
@@ -25,7 +25,7 @@
             >
               <v-avatar
                 size="128"
-                color="grey lighten-4"
+                color="grey-lighten-4"
               >
                 <img
                   v-if="avatar && !error"
@@ -35,7 +35,7 @@
                 <v-icon
                   v-else
                   size="148"
-                  color="grey lighten-2"
+                  color="grey-lighten-2"
                 >
                   account_circle
                 </v-icon>
@@ -263,14 +263,14 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               disabled
             >
               {{ $t('Cancel') }}
             </v-btn>
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               disabled
             >

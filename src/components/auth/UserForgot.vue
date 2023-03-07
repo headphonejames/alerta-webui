@@ -15,7 +15,7 @@
         offset-xs0
         offset-sm2
       >
-        <p class="text-xs-center headline font-weight-medium">
+        <p class="text-xs-center text-h5 font-weight-medium">
           <span>{{ $t('ResetLink') }}</span>
         </p>
         <v-form @submit.prevent="forgot()">
@@ -70,7 +70,7 @@
         offset-xs0
         offset-sm2
       >
-        <p class="text-xs-center headline font-weight-medium">
+        <p class="text-xs-center text-h5 font-weight-medium">
           <span>{{ $t('CheckEmail') }}</span>
         </p>
         <v-form>

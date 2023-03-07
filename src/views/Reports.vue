@@ -1,7 +1,7 @@
 <template>
   <div class="reports">
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('Reports') }}
         <v-spacer />
         <v-col

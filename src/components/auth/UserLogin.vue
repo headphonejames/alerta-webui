@@ -15,7 +15,7 @@
         offset-xs0
         offset-sm2
       >
-        <p class="text-xs-center headline font-weight-medium">
+        <p class="text-xs-center text-h5 font-weight-medium">
           {{ $t('LoginToContinue') }}
         </p>
         <v-form @submit.prevent="login()">
@@ -71,7 +71,7 @@
         offset-sm2
       >
         <div>
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             SAML2 Authentication uses pop-up windows.
           </p>
           <p class="text-xs-center subheading font-weight-medium">
@@ -79,12 +79,12 @@
           </p>
         </div>
         <div v-show="message && !error">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ message }}
           </p>
         </div>
         <div v-show="error">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ $t('UnspecifiedProblem') }}
             <a
               href="#"
@@ -107,12 +107,12 @@
         offset-sm2
       >
         <div v-show="message && !error">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ message }}
           </p>
         </div>
         <div v-show="error">
-          <p class="text-xs-center headline font-weight-medium">
+          <p class="text-xs-center text-h5 font-weight-medium">
             {{ $t('UnspecifiedProblem') }}
             <a
               href="#"

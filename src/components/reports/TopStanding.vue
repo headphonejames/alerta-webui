@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title primary-title>
         <div>
-          <div class="headline">
+          <div class="text-h5">
             {{ $t('Top') }} {{ rowsPerPage }} {{ $t('Standing') }}
           </div><br>
           <span class="grey--text">{{ $t('TopStandingDescription') }}</span>

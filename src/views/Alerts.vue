@@ -12,7 +12,7 @@
       <v-form ref="form">
         <v-card>
           <v-card-title class="justify-center">
-            <span class="title">
+            <span class="text-h6">
               {{ $t('ChooseDisplayDensity') }}
             </span>
           </v-card-title>
@@ -35,7 +35,7 @@
           <v-card-actions>
             <v-spacer />
             <v-btn
-              color="blue darken-1"
+              color="blue-darken-1"
               variant="flat"
               @click="ok"
             >
